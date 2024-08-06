@@ -14,12 +14,12 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Chirpy # the main title
+title: deuk9 # the main title
 
-tagline: A text-focused Jekyll theme # it will display as the subtitle
+tagline: 득구의 개발 노트 # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  A minimal, responsive and feature-rich Jekyll theme for technical writing.
+  Backend Developer's Technical Blog
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -35,7 +35,7 @@ social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: deuk9
-  email: example@domain.com # change to your email address
+#  email: example@domain.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
 #    - https://twitter.com/username # change to your Twitter homepage
@@ -46,7 +46,7 @@ social:
 
 # Site Verification Settings
 webmaster_verifications:
-  google: # fill in your Google verification code
+  google: hxCZRnaUUxEgLRpgPweo8WbTAktCDk0qkKvL13T9WYU
   bing: # fill in your Bing verification code
   alexa: # fill in your Alexa verification code
   yandex: # fill in your Yandex verification code
