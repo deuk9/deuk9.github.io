@@ -3,8 +3,8 @@ import { resolve } from 'path'
 
 export default defineNuxtConfig({
 
-  modules: ['@nuxt/eslint', '@nuxt/content', '@nuxt/ui', '@nuxt/image', '@nuxtjs/mdc'],
-  devtools: { enabled: true },
+  modules: ['@nuxt/eslint', '@nuxt/content', '@nuxt/ui', '@nuxt/image', '@nuxtjs/mdc', '@nuxtjs/tailwindcss', '@nuxt/icon'],
+  devtools: { enabled: false },
   content: {
     build: {
       markdown: {

@@ -2,7 +2,7 @@
 title: 'test'
 description: 'meta description of the page'
 date: 2021-10-21
-tags: ['test', 'test2']
+tags: [ 'java', 'test', 'test2' ]
 ---
 
 ## Using Backticks

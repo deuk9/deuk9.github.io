@@ -2,9 +2,9 @@
   <div>
     <AppHeader class="border h-8 border-gray-200" />
     <div class="flex justify-center">
-      <div>
-        <AppAside class="fixed top-60 left-64 " />
-      </div>
+      <!--      <div> -->
+      <!--        <AppAside class="fixed top-60 left-64 " /> -->
+      <!--      </div> -->
       <!-- 왼쪽 div의 고정 위치를 본문에 가깝게 설정합니다 -->
       <!--      <div class="w-96"> -->
       <!--        <AppAside class=" top-60 left-0" /> -->
