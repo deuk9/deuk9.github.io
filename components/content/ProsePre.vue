@@ -11,6 +11,7 @@
 
     <pre
       :class="$props.class"
+      class="text-wrap"
     >
       <slot />
     </pre>

@@ -13,17 +13,17 @@ const links = [
     },
     badge: 100,
   }, {
-    label: 'Installation',
+    label: 'Home',
     icon: 'i-heroicons-home',
-    to: '/getting-started/installation',
+    to: '/',
   }, {
-    label: 'Vertical Navigation',
-    icon: 'i-heroicons-chart-bar',
-    to: '/components/vertical-navigation',
+    label: 'Tags',
+    icon: 'i-mdi:tag-search',
+    to: '/tags',
   }, {
-    label: 'Command Palette',
-    icon: 'i-heroicons-command-line',
-    to: '/components/command-palette',
+    label: 'categories',
+    icon: 'i-fa6-solid:folder',
+    to: '/categories',
   }], [{
     label: 'Examples',
     icon: 'i-heroicons-light-bulb',
