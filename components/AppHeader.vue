@@ -1,7 +1,7 @@
 <template>
   <header class="flex justify-between items-center p-4 shadow-md bg-white">
     <div class="text-xl font-bold cursor-pointer">
-      deuk.9.blog
+      <a :href="`/`">deuk.9.blog</a>
     </div>
     <div class="flex space-x-4">
       <NuxtLink to="/">

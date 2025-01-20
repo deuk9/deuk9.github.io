@@ -13,11 +13,11 @@
       <div class="ml-0 w-full max-w-4xl px-6">
         <slot />
       </div>
-      <div class="border-gray-200">
-        <aside>어사이드</aside>
-      </div>
+      <!--      <div class="border-gray-200"> -->
+      <!--        <aside>어사이드</aside> -->
+      <!--      </div> -->
     </div>
-    <AppFooter />
+    <!--    <AppFooter /> -->
   </div>
 </template>
 

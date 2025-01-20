@@ -2,9 +2,27 @@
 import { resolve } from 'path'
 
 export default defineNuxtConfig({
-
-  modules: ['@nuxt/eslint', '@nuxt/content', '@nuxt/ui', '@nuxt/image', '@nuxtjs/mdc', '@nuxtjs/tailwindcss', '@nuxt/icon'],
+  modules: [
+    '@nuxt/eslint',
+    '@nuxtjs/sitemap',
+    '@nuxt/content',
+    '@nuxt/ui',
+    '@nuxt/image',
+    '@nuxtjs/mdc',
+    '@nuxtjs/tailwindcss',
+    '@nuxt/icon',
+  ],
+  // ssr: false,
   devtools: { enabled: false },
+  app: {
+    head: {
+      title: 'deuk9-dev-blog',
+    },
+  },
+  site: {
+    url: 'https://deuk9.github.io/',
+    name: 'My Awesome Website',
+  },
   content: {
     build: {
       markdown: {
@@ -48,10 +66,14 @@ export default defineNuxtConfig({
     '@': resolve(__dirname, '/'),
   },
   compatibilityDate: '2024-04-03',
+  nitro: {
+    preset: 'github-pages',
+  },
   eslint: {
     config: {
       stylistic: true, // <---
     },
   },
+  target: 'static',
 
 })

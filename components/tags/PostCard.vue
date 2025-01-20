@@ -1,7 +1,12 @@
 <template>
-  <div class="p-4 border rounded-md shadow-sm">
-    <h2 class="text-lg font-bold">
-      {{ post.title }}
+  <div
+    class="p-4 border rounded-md shadow-sm"
+  >
+    <h2
+      class="text-xl font-bold cursor-pointer"
+      @click="goToPost"
+    >
+      <a>{{ post.title }}</a>
     </h2>
     <p class="text-sm text-gray-500">
       {{ post.description }}
@@ -25,8 +30,13 @@ interface PostCardInfo {
   description: string
   date: string
   tags: string[]
+  path: string
 }
 
 // Props 정의
-defineProps<{ post: PostCardInfo }>()
+const props = defineProps<{ post: PostCardInfo }>()
+
+const goToPost = () => {
+  navigateTo(props.post.path)
+}
 </script>

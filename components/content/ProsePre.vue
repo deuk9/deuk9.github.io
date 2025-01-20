@@ -8,6 +8,10 @@
         @click="copyCode"
       />
     </div>
+    <div>
+      {{ filename }}
+      {{ meta }}
+    </div>
 
     <pre
       :class="$props.class"
