@@ -1,22 +1,26 @@
 <template>
   <div>
-    <PostCard
+    <div
       v-for="post in filteredContents"
       :key="post.id"
-      :post="{
-        id: post.id,
-        date: post.date,
-        title: post.title,
-        tags: post.tags,
-        description: post.description,
-        path: post.path,
-      }"
-    />
+      class="mt-3"
+    >
+      <PostCard
+        :post="{
+          id: post.id,
+          date: post.date,
+          title: post.title,
+          tags: post.tags,
+          description: post.description,
+          path: post.path,
+        }"
+      />
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import PostCard from '~/components/tags/PostCard.vue'
+import PostCard from '~/components/card/PostCard.vue'
 
 const route = useRoute()
 const id = route.params.id

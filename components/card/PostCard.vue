@@ -1,6 +1,6 @@
 <template>
   <div
-    class="p-6 bg-white border border-gray-200 rounded-lg shadow hover:shadow-xl  transition-shadow duration-200"
+    class="p-6 bg-white border border-gray-200 rounded-lg shadow hover:shadow-xl transition-shadow duration-200"
   >
     <!-- 제목 -->
     <h1
@@ -42,6 +42,7 @@ interface PostCardInfo {
   date: string
   tags: string[]
   path: string
+  content: string // 추가된 필드: 포스트의 본문 내용
 }
 
 // Props 정의

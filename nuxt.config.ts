@@ -21,7 +21,7 @@ export default defineNuxtConfig({
   },
   site: {
     url: 'https://deuk9.github.io/',
-    name: 'My Awesome Website',
+    name: 'deuk9 의 개발 블로그',
   },
   content: {
     build: {
@@ -58,10 +58,10 @@ export default defineNuxtConfig({
       },
     },
   },
-  ui: {
-    primary: 'green',
-    gray: 'cool',
-  },
+  // ui: {
+  //   primary: 'blue',
+  //   gray: 'cool',
+  // },
   alias: {
     '@': resolve(__dirname, '/'),
   },

@@ -10,9 +10,11 @@ const { data: page } = await useAsyncData(route.path, () => {
 <template>
   <div>
     <header>
-      <p>
+      <p class="text-5xl mb-2">
         해더입니다
       </p>
+      <p>날짜</p>
+      <p>태그</p>
     </header>
     <ContentRenderer
       v-if="page"
