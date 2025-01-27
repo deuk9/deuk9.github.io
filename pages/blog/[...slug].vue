@@ -1,55 +1,92 @@
 <template>
-  <div class="max-w-4xl mx-auto px-4 py-8 bg-white shadow-lg rounded-lg">
-    <!-- Blog Title -->
-    <div class="text-center mb-12">
-      <h1 class="text-4xl font-bold text-gray-800 mb-2">
-        {{ page.title }}
-      </h1>
-      <p class="text-sm text-gray-500">
-        Published on {{ page.date }}
-      </p>
-    </div>
-
-    <!-- Blog Content -->
-    <div>
-      <ContentRenderer
-        v-if="page"
-        :value="page"
-      />
-    </div>
-    <TableOfContents :toc="page.body.toc" />
-    <!-- Tags Section (Moved to Footer) -->
-    <div class="mt-8 pt-4 border-t">
-      <p class="text-lg font-semibold text-gray-700 mb-2">
-        Tags:
-      </p>
-      <div class="flex flex-wrap gap-2">
-        <span
-          v-for="tag in page.tags"
-          :key="tag"
-          class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full shadow-sm"
-        >
-          #{{ tag }}
-        </span>
+  <div class="container mx-auto flex flex-col lg:flex-row gap-6 px-4 py-8">
+    <!-- Main Blog Content -->
+    <main class="flex-1">
+      <!-- Blog Header -->
+      <div class="mb-12">
+        <h1 class="text-5xl font-bold text-gray-800 mb-2">
+          {{ page.title }}
+        </h1>
+        <div class="text-sm text-gray-500 mt-5">
+          <div>
+            <time :datetime="page.date">{{ formattedDate }}</time>
+          </div>
+          <div>
+            By
+            {{ author }}
+          </div>
+        </div>
+        <!-- Blog Tags -->
+        <div class="mt-7 border-b pb-7">
+          <div class="flex flex-wrap gap-2">
+            <span
+              v-for="tag in page.tags"
+              :key="tag"
+              class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full"
+            >
+              #{{ tag }}
+            </span>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <!-- Blog Footer -->
-    <div class="mt-8 pt-4 border-t">
-      <p class="text-center text-sm text-gray-500">
-        Thanks for reading! Feel free to share this post or leave a comment.
-      </p>
-    </div>
+      <!-- Blog Content -->
+      <article>
+        <ContentRenderer
+          :value="page.body"
+          :tag="abc"
+        />
+      </article>
+    </main>
+
+    <!--    Table of Contents Sidebar -->
+    <!--    <aside -->
+    <!--      class="hidden lg:block w-48 sticky bg-gray-50 shadow-md rounded-md p-3" -->
+    <!--    > -->
+    <!--      <h2 class="font-semibold text-gray-800 text-base mb-3"> -->
+    <!--        Contents -->
+    <!--      </h2> -->
+    <!--      <TableOfContents :toc="page.body.toc" /> -->
+    <!--    </aside> -->
   </div>
 </template>
 
 <script lang="ts" setup>
-import TableOfContents from '~/components/toc/TableOfConents.vue'
+import { computed, onMounted } from 'vue'
 
+// Fetch blog data
+const author = useRuntimeConfig().public.author
 const route = useRoute()
 const { data: page } = await useAsyncData(route.path, () => {
   return queryCollection('contents')
     .path(route.path)
     .first()
+})
+
+// Format the date
+const formattedDate = computed(() => {
+  const date = new Date(page.value.date)
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+})
+
+// TOC highlighting logic
+onMounted(() => {
+  const updateActiveToc = () => {
+    const tocItems = document.querySelectorAll('.toc-link')
+    tocItems.forEach((item) => {
+      const target = document.querySelector(item.getAttribute('href')!)
+      if (target) {
+        const rect = target.getBoundingClientRect()
+        if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
+          item.classList.add('text-blue-500', 'font-bold')
+        }
+        else {
+          item.classList.remove('text-blue-500', 'font-bold')
+        }
+      }
+    })
+  }
+
+  window.addEventListener('scroll', updateActiveToc)
 })
 </script>

@@ -1,7 +1,7 @@
 <template>
   <header class="flex justify-between items-center  p-3 shadow-md bg-white">
     <div class="text-2xl font-bold cursor-pointer ml-10">
-      <a :href="`/`">deuk.9.blog</a>
+      <a :href="`/`">{{ author }}.blog</a>
     </div>
     <div class="flex space-x-4">
       <NuxtLink to="/">
@@ -22,4 +22,5 @@
 </template>
 
 <script setup lang="ts">
+const author = useRuntimeConfig().public.author
 </script>

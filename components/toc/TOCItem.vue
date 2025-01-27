@@ -3,14 +3,14 @@
     <!-- 현재 항목 -->
     <a
       :href="'#' + item.id"
-      class="text-blue-500 hover:underline"
+      class="text-gray-500 hover:underline text-sm"
     >
       {{ item.text }}
     </a>
     <!-- 자식 항목 -->
     <ul
       v-if="item.children && item.children.length"
-      class="space-y-2 mt-2"
+      class="space-y-2 mt-2 text-xs"
     >
       <TOCItem
         v-for="child in item.children"

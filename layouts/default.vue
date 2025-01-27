@@ -2,11 +2,11 @@
   <div>
     <AppHeader />
     <div class="flex justify-center mt-8">
-      <div class="ml-0 w-full max-w-4xl">
+      <div class="ml-0 w-full max-w-3xl">
         <slot />
       </div>
     </div>
-    <AppFooter class="border h-8 border-gray-200" />
+    <AppFooter class=" h-8  " />
   </div>
 </template>
 

@@ -1,4 +1,5 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
+import { asSitemapCollection } from '@nuxtjs/sitemap/content'
 
 export default defineContentConfig({
   collections: {
@@ -11,5 +12,12 @@ export default defineContentConfig({
         excerpt: z.string(),
       }),
     }),
+    sitemap: defineCollection(
+      // adds the robots frontmatter key to the collection
+      asSitemapCollection({
+        type: 'page',
+        source: 'blog/**/*.md',
+      }),
+    ),
   },
 })

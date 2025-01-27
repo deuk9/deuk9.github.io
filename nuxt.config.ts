@@ -12,11 +12,10 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxt/icon',
   ],
-  // ssr: false,
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   app: {
     head: {
-      title: 'deuk9-dev-blog',
+      title: 'deuk9-blog',
     },
   },
   site: {
@@ -32,8 +31,7 @@ export default defineNuxtConfig({
           'remark-emoji': {
             emoticon: true,
           },
-          // Disable remark-gfm
-          'remark-gfm': false,
+          'remark-gfm': true,
           // Add remark-oembed
           'remark-oembed': {
             // Options
@@ -58,6 +56,12 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  runtimeConfig: {
+    public: {
+      author: 'deuk9',
+    },
+  },
   // ui: {
   //   primary: 'blue',
   //   gray: 'cool',
@@ -69,11 +73,12 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'github-pages',
   },
+  // ssr: false,
+
   eslint: {
     config: {
       stylistic: true, // <---
     },
   },
   target: 'static',
-
 })
