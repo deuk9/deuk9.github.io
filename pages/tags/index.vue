@@ -2,6 +2,11 @@
   <div class="border-amber-50 flex flex-col items-center">
     <!-- Tag Box -->
     <div class="w-full max-w-2xl p-4">
+      <!-- 태그 개수 표시 -->
+      <p class="text-lg font-semibold text-gray-700 mb-4">
+        총 {{ allTags.size }}개의 태그가 있습니다.
+      </p>
+
       <div class="flex flex-wrap gap-2">
         <div
           v-for="([tag, count]) in allTags"
@@ -32,6 +37,7 @@
             tags: post.tags,
             description: post.description,
             path: post.path,
+            content: post,
           }"
           class="w-full"
         />
@@ -46,24 +52,21 @@ import { useRoute } from 'vue-router'
 import PostCard from '~/components/card/PostCard.vue'
 
 const route = useRoute()
-
-// Fetching the content data
 const { data: contents } = await useAsyncData(route.path, () => {
   return queryCollection('contents')
-    .select('tags', 'title', 'date', 'description', 'path')
+    .select('id', 'tags', 'title', 'date', 'description', 'path', 'body', 'excerpt')
     .order('date', 'desc')
     .all()
 })
 
-// Calculating all tags with their counts
+// 태그 계산
 const allTags = contents.value
   ?.flatMap(item => item.tags)
   .reduce((acc, tag) => acc.set(tag, (acc.get(tag) || 0) + 1), new Map())
 
-// State for the selected tag
 const selectedTag = ref(null)
 
-// Filtered contents based on the selected tag
+// 필터된 콘텐츠 계산
 const filteredContents = computed(() => {
   if (!selectedTag.value) return contents.value || []
   return (contents.value || []).filter(content =>
@@ -71,7 +74,7 @@ const filteredContents = computed(() => {
   )
 })
 
-// Function to update the selected tag
+// 태그 선택 함수
 const selectTag = (tag) => {
   selectedTag.value = selectedTag.value === tag ? null : tag // Deselect if already selected
 }

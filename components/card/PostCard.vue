@@ -20,6 +20,15 @@
       {{ post.date }}
     </p>
 
+    <!-- 본문 내용 (3줄 제한) -->
+    <p
+      class="text-sm text-gray-600 mt-4 line-clamp-3"
+    >
+      <!--      <ContentRenderer -->
+      <!--        :value="post.content" -->
+      <!--      /> -->
+    </p>
+
     <!-- 태그 리스트 -->
     <div class="flex flex-wrap gap-2 mt-4">
       <span
@@ -42,12 +51,13 @@ interface PostCardInfo {
   date: string
   tags: string[]
   path: string
-  content: string // 추가된 필드: 포스트의 본문 내용
+  content: object // 추가된 필드: 포스트의 본문 내용
 }
 
 // Props 정의
 const props = defineProps<{ post: PostCardInfo }>()
 
+console.log(props.post)
 // 클릭 시 이동 함수
 const goToPost = () => {
   navigateTo(props.post.path)

@@ -9,6 +9,8 @@ title: archunit 을 활용한 코드 컨벤션 검증
 코드 컨벤션, 안티 패턴등을 체크하는데 유용하다.  
 클래스의 postfix, 의존성, 어노테이션 체크등 여러가지 기능을 제공한다.
 
+<!--more-->
+
 ## 2. 의존성
 ```gradle
 testImplementation 'com.tngtech.archunit:archunit:1.1.0'

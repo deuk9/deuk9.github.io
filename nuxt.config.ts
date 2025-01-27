@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     '@nuxt/icon',
   ],
   // ssr: false,
-  devtools: { enabled: false },
+  devtools: { enabled: true },
   app: {
     head: {
       title: 'deuk9-dev-blog',

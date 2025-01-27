@@ -1,11 +1,15 @@
 <template>
-  <header class="flex justify-between items-center p-4 shadow-md bg-white">
-    <div class="text-xl font-bold cursor-pointer">
+  <header class="flex justify-between items-center  p-3 shadow-md bg-white">
+    <div class="text-2xl font-bold cursor-pointer ml-10">
       <a :href="`/`">deuk.9.blog</a>
     </div>
     <div class="flex space-x-4">
       <NuxtLink to="/">
-        <UButton icon="i-heroicons-home">Home</UButton>
+        <UButton
+          icon="i-heroicons-home"
+        >
+          Home
+        </UButton>
       </NuxtLink>
       <NuxtLink to="/tags">
         <UButton icon="i-mdi:tag-search">Tags</UButton>

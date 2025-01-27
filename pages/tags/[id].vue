@@ -13,6 +13,7 @@
           tags: post.tags,
           description: post.description,
           path: post.path,
+          content: post,
         }"
       />
     </div>

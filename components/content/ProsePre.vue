@@ -1,13 +1,13 @@
 <template>
   <div class="bg-gray-50 border-gray-200  border border-solid mt-2 relative ">
-    <div class="absolute right-0">
-      <UButton
-        :label="language"
-        color="gray"
-        icon="i-heroicons-pencil-square"
-        @click="copyCode"
-      />
-    </div>
+    <!--    <div class="absolute right-0"> -->
+    <!--      <UButton -->
+    <!--        :label="language" -->
+    <!--        color="gray" -->
+    <!--        icon="i-heroicons-pencil-square" -->
+    <!--        @click="copyCode" -->
+    <!--      /> -->
+    <!--    </div> -->
     <pre
       :class="$props.class"
       class="text-wrap"
@@ -36,9 +36,9 @@ withDefaults(defineProps<HighlightCode>(), {
   meta: '',
 })
 
-const copyCode = () => {
-  console.log('click')
-}
+// const copyCode = () => {
+//   console.log('click')
+// }
 </script>
 
 <style>
