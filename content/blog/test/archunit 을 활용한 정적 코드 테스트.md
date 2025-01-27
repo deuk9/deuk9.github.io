@@ -5,8 +5,13 @@ title: archunit 을 활용한 코드 컨벤션 검증
 ---
 
 ## 1. archunit 을 활용한 테스트
+- 테스트
+- 테스트 
+
+
 런타임전에 코드를 분석한다.  
 코드 컨벤션, 안티 패턴등을 체크하는데 유용하다.  
+클래스의 postfix, 의존성, 어노테이션 체크등 여러가지 기능을 제공한다.   
 클래스의 postfix, 의존성, 어노테이션 체크등 여러가지 기능을 제공한다.
 
 <!--more-->
@@ -84,4 +89,11 @@ void controllerCantHaveModelTest() {
 
 ---
 Reference
-[쥬쥬와-하루만에-끝내는-스프링테스트](https://www.inflearn.com/course/%EC%A5%AC%EC%A5%AC%EC%99%80-%ED%95%98%EB%A3%A8%EB%A7%8C%EC%97%90-%EB%81%9D%EB%82%B4%EB%8A%94-%EC%8A%A4%ED%94%84%EB%A7%81%ED%85%8C%EC%8A%A4%ED%8A%B8/dashboard)
+- hi
+- [쥬쥬와-하루만에-끝내는-스프링테스트](https://www.inflearn.com/course/%EC%A5%AC%EC%A5%AC%EC%99%80-%ED%95%98%EB%A3%A8%EB%A7%8C%EC%97%90-%EB%81%9D%EB%82%B4%EB%8A%94-%EC%8A%A4%ED%94%84%EB%A7%81%ED%85%8C%EC%8A%A4%ED%8A%B8/dashboard)
+
+
+- 테스트
+- ㅇㅇ
+
+1. 테스트

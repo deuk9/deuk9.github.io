@@ -60,6 +60,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       author: 'deuk9',
+      comment: '성장과 배움, 그리고 공유의 공간입니다.',
+      github: 'https://deuk9.github.io/',
     },
   },
   // ui: {

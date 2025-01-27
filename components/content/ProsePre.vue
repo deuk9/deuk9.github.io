@@ -1,5 +1,5 @@
 <template>
-  <div class="w-auto bg-gray-50 border-gray-200  border border-solid mt-2">
+  <div class="w-auto bg-gray-50 border-gray-200  border border-solid mt-2 mb-2">
     <pre
       :class="$props.class"
       class="text-wrap"

@@ -1,21 +1,26 @@
 <template>
   <header class="flex justify-between items-center  p-3 shadow-md bg-white">
-    <div class="text-2xl font-bold cursor-pointer ml-10">
+    <div class="font-bold cursor-pointer ml-16 text-xl">
       <a :href="`/`">{{ author }}.blog</a>
     </div>
-    <div class="flex space-x-4">
+    <div class="flex space-x-4 pr-7">
       <NuxtLink to="/">
-        <UButton
-          icon="i-heroicons-home"
-        >
-          Home
-        </UButton>
+        <UIcon
+          name="mdi:home-variant"
+          class="w-5 h-5"
+        />
       </NuxtLink>
       <NuxtLink to="/tags">
-        <UButton icon="i-mdi:tag-search">Tags</UButton>
+        <UIcon
+          name="mdi:tag-outline"
+          class="w-5 h-5"
+        />
       </NuxtLink>
       <NuxtLink to="/categories">
-        <UButton icon="i-fa6-solid:folder">Categories</UButton>
+        <UIcon
+          name="mdi:folder-multiple"
+          class="w-5 h-5"
+        />
       </NuxtLink>
     </div>
   </header>

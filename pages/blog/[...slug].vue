@@ -4,7 +4,7 @@
     <main class="flex-1">
       <!-- Blog Header -->
       <div class="mb-12">
-        <h1 class="text-5xl font-bold text-gray-800 mb-2">
+        <h1 class="text-4xl font-bold text-gray-800 mb-2">
           {{ page.title }}
         </h1>
         <div class="text-sm text-gray-500 mt-5">
@@ -19,19 +19,17 @@
         <!-- Blog Tags -->
         <div class="mt-7 border-b pb-7">
           <div class="flex flex-wrap gap-2">
-            <span
+            <TagButton
               v-for="tag in page.tags"
               :key="tag"
-              class="px-3 py-1 text-sm bg-gray-100 text-gray-700 rounded-full"
-            >
-              #{{ tag }}
-            </span>
+              :tag="tag"
+            />
           </div>
         </div>
       </div>
 
       <!-- Blog Content -->
-      <article>
+      <article class="mb-7">
         <ContentRenderer
           :value="page.body"
           :tag="abc"
@@ -53,6 +51,7 @@
 
 <script lang="ts" setup>
 import { computed, onMounted } from 'vue'
+import TagButton from '~/components/tags/TagButton.vue'
 
 // Fetch blog data
 const author = useRuntimeConfig().public.author

@@ -4,7 +4,7 @@
     <div class="w-full max-w-2xl p-4">
       <!-- 태그 개수 표시 -->
       <p class="text-lg font-semibold text-gray-700 mb-4">
-        총 {{ allTags.size }}개의 태그가 있습니다.
+        총 {{ filteredContents.length }}개의 태그가 있습니다. #{{ selectedTag }}
       </p>
 
       <div class="flex flex-wrap gap-2">
@@ -25,7 +25,7 @@
     </div>
 
     <!-- Card Box -->
-    <div class="w-full max-w-2xl mt-4">
+    <div class="w-full max-w-2xl mt-4 mb-4">
       <div class="flex flex-col gap-6">
         <PostCard
           v-for="post in filteredContents"
@@ -38,8 +38,10 @@
             description: post.description,
             path: post.path,
             content: post,
+            needEvent: true,
           }"
           class="w-full"
+          @tag-clicked="onSelectedTag"
         />
       </div>
     </div>
@@ -47,11 +49,15 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import PostCard from '~/components/card/PostCard.vue'
 
 const route = useRoute()
+const { q } = route.query
+
+console.log(q)
+
 const { data: contents } = await useAsyncData(route.path, () => {
   return queryCollection('contents')
     .select('id', 'tags', 'title', 'date', 'description', 'path', 'body', 'excerpt')
@@ -64,7 +70,7 @@ const allTags = contents.value
   ?.flatMap(item => item.tags)
   .reduce((acc, tag) => acc.set(tag, (acc.get(tag) || 0) + 1), new Map())
 
-const selectedTag = ref(null)
+const selectedTag = ref(route.query.q || null)
 
 // 필터된 콘텐츠 계산
 const filteredContents = computed(() => {
@@ -76,6 +82,12 @@ const filteredContents = computed(() => {
 
 // 태그 선택 함수
 const selectTag = (tag) => {
-  selectedTag.value = selectedTag.value === tag ? null : tag // Deselect if already selected
+  selectedTag.value = selectedTag.value === tag ? null : tag
+  navigateTo(`/tags?q=${tag}`)
+}
+
+const onSelectedTag = (tag) => {
+  selectedTag.value = tag
+  navigateTo(`/tags?q=${tag}`)
 }
 </script>

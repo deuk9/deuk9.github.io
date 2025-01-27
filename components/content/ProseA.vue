@@ -2,7 +2,6 @@
   <NuxtLink
     :href="props.href"
     :target="props.target"
-    class="text-blue-200"
   >
     <slot />
   </NuxtLink>
