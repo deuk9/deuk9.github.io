@@ -36,9 +36,11 @@ const refinedSrc = computed(() => {
   if (props.src?.startsWith('/') && !props.src.startsWith('//')) {
     const _base = withLeadingSlash(withTrailingSlash(useRuntimeConfig().app.baseURL))
     if (_base !== '/' && !props.src.startsWith(_base)) {
+      console.log('joinURL', joinURL(_base, props.src))
       return joinURL(_base, props.src)
     }
   }
+  console.log('props.src', props.src)
   return props.src
 })
 </script>
