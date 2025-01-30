@@ -108,16 +108,17 @@ export default defineNuxtConfig({
   // ssr: false,
 
   icon: {
-    clientBundle: {
-      // list of icons to include in the client bundle
-      // scan all components in the project and include icons
-      // scan: true,
-      scan: {
-        // note that when you specify those values, the default behavior will be overridden
-        globInclude: ['components/**/*.vue', 'pages/**/*.vue'],
-        globExclude: ['node_modules', 'dist'],
-      },
-    },
+    serverBundle: false,
+    // clientBundle: {
+    //   // list of icons to include in the client bundle
+    //   // scan all components in the project and include icons
+    //   // scan: true,
+    //   scan: {
+    //     // note that when you specify those values, the default behavior will be overridden
+    //     globInclude: ['components/**/*.vue', 'pages/**/*.vue'],
+    //     globExclude: ['node_modules', 'dist'],
+    //   },
+    // },
   },
   target: 'static',
 })
