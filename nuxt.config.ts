@@ -108,9 +108,7 @@ export default defineNuxtConfig({
   // ssr: false,
 
   icon: {
-    serverBundle: {
-      collections: ['uil', 'mdi'],
-    },
+    serverBundle: 'remote',
   },
 
   target: 'static',

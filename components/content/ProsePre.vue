@@ -2,7 +2,7 @@
   <div class="w-auto bg-gray-50 border-gray-200  border border-solid mt-2 mb-2">
     <pre
       :class="$props.class"
-      class="text-wrap"
+      class="text-wrap text-sm "
     >
       <slot />
     </pre>
@@ -27,15 +27,10 @@ withDefaults(defineProps<HighlightCode>(), {
   highlights: null,
   meta: '',
 })
-
-// const copyCode = () => {
-//   console.log('click')
-// }
 </script>
 
 <style>
 pre code .line {
   display: block;
-  font-size: 0.8rem;
 }
 </style>

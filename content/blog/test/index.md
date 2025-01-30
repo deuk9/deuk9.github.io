@@ -10,7 +10,7 @@ tags:
 - 테스트
 - 테스트 
 
-![이것도 테스트](/blog/test/profile.jpeg)
+[//]: # (![이것도 테스트]&#40;/blog/test/profile.jpeg&#41;)
 ![테스트](/blog/test/sample.png)
 
 런타임전에 코드를 분석한다.  

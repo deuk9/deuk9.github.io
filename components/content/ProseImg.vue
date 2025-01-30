@@ -6,15 +6,15 @@
       :alt="alt"
       :width="width"
       :height="height"
-      :placeholder="[50, 25, 75, 5]"
-      class="w-full max-w-lg transition-opacity duration-200"
+      :placeholder="img(`/${refinedSrc}`, { quality: 80, blur: 3 })"
+      class="w-full max-w-lg "
     />
     <!-- 캡션 -->
     <figcaption
       v-if="alt"
-      class="text-gray-600 text-sm italic text-center mt-3 mb-2"
+      class="text-gray-600 text-sm italic text-center mt-4 mb-4"
     >
-      {{ alt }}
+      <p>{{ alt }}</p>
     </figcaption>
   </figure>
 </template>
@@ -22,6 +22,8 @@
 <script setup lang="ts">
 import { joinURL, withLeadingSlash, withTrailingSlash } from 'ufo'
 import { computed, useRuntimeConfig } from '#imports'
+
+const img = useImage()
 
 const props = defineProps({
   src: { type: String, default: '' },
