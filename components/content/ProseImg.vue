@@ -7,7 +7,7 @@
         :alt="alt"
         :width="width"
         :height="height"
-        :placeholder="[50, 25, 75, 5]"
+
         class="w-full max-w-lg transition-opacity duration-200"
       />
       <!-- 캡션 -->

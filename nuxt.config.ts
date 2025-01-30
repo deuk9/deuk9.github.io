@@ -31,6 +31,10 @@ export default defineNuxtConfig({
   },
 
   content: {
+    database: {
+      type: 'sqlite',
+      // binding: 'SQLITE_DB_LOCATION',
+    },
     build: {
       markdown: {
         // Object syntax can be used to override default options
@@ -84,6 +88,16 @@ export default defineNuxtConfig({
 
   nitro: {
     preset: 'github_pages',
+    routeRules: {
+      '/**': {
+        headers: {
+          'Cross-Origin-Opener-Policy': 'same-origin',
+          'Cross-Origin-Embedder-Policy': 'require-corp',
+          'Cross-Origin-Resource-Policy': 'same-origin',
+          'Access-Control-Allow-Origin': '*',
+        },
+      },
+    },
   },
 
   eslint: {
