@@ -10,24 +10,18 @@
       <a>{{ post.title }}</a>
     </h1>
 
-    <!-- 설명 -->
-    <p class="text-sm text-gray-500 mt-2">
-      {{ post.description }}
-    </p>
-
     <!-- 작성 날짜 -->
     <p class="text-xs text-gray-400 mt-1">
       {{ post.date }}
     </p>
 
     <!-- 본문 내용 (3줄 제한) -->
-    <p
-      class="text-sm text-gray-600 mt-4 line-clamp-3"
-    >
-      <ContentRenderer
-        :value="post.content"
-      />
-    </p>
+    <ContentRenderer
+      v-if="post.content"
+      :value="post.content"
+      :unwrap="true"
+      class="reset-content text-sm text-gray-600 mt-4 line-clamp-3"
+    />
 
     <!-- 태그 리스트 -->
     <div class="flex flex-wrap gap-2 mt-4">

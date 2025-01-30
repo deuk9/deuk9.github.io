@@ -7,7 +7,7 @@
         width="130"
         height="130"
         class="rounded-full border-2 border-gray-300"
-        alt="Profile Picture"
+        alt="Avartar"
       />
 
       <!-- Profile Info -->
@@ -18,6 +18,14 @@
         <p class="text-gray-600 text-lg mt-2">
           {{ comment }}
         </p>
+        <div v-if="github">
+          <NuxtLink :to="github">
+            <UIcon
+              name="octicon:mark-github-16"
+              class="w-5 h-5"
+            />
+          </NuxtLink>
+        </div>
       </div>
     </div>
 
@@ -28,7 +36,6 @@
           v-for="post in contents"
           :key="post.id"
           :post="{
-            id: post.id,
             date: post.date,
             title: post.title,
             tags: post.tags,
@@ -38,7 +45,6 @@
             needEvent: true,
           }"
           class="w-full"
-          @tag-clicked="onSelectedTag"
         />
       </div>
     </div>
@@ -57,9 +63,9 @@ const route = useRoute()
 
 const { data: contents } = await useAsyncData(route.path, () => {
   return queryCollection('contents')
-    .select('id', 'tags', 'title', 'date', 'description', 'path', 'body', 'excerpt')
-    .order('date', 'desc')
-    .limit(10)
+    .select('id', 'tags', 'title', 'date', 'description', 'path', 'body')
+    .order('date', 'DESC')
+    .limit(5)
     .all()
 })
 </script>

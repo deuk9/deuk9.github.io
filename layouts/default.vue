@@ -6,7 +6,7 @@
         <slot />
       </div>
     </div>
-    <AppFooter class=" h-8  " />
+    <AppFooter class="h-8" />
   </div>
 </template>
 

@@ -29,7 +29,7 @@ const id = route.params.id
 const { data: contents } = await useAsyncData(route.path, () => {
   return queryCollection('contents')
     .select('tags', 'title', 'date', 'description', 'path')
-    .order('date', 'desc')
+    .order('date', 'DESC')
     .all()
 })
 

@@ -1,7 +1,10 @@
 <template>
   <div class="container mx-auto flex flex-col lg:flex-row gap-6 px-4 py-8">
     <!-- Main Blog Content -->
-    <main class="flex-1">
+    <main
+      v-if="post"
+      class="flex-1"
+    >
       <!-- Blog Header -->
       <div class="mb-12">
         <h1 class="text-4xl font-bold text-gray-800 mb-2">
@@ -31,61 +34,61 @@
       <!-- Blog Content -->
       <article class="mb-7">
         <ContentRenderer
+          v-if="page.body"
           :value="page.body"
-          :tag="abc"
         />
       </article>
+      <!-- Previous and Next Buttons -->
+      <div class="border-t border-gray-200">
+        <PostNavigation
+          :previous-post="previousPost"
+          :next-post="nextPost"
+        />
+      </div>
     </main>
-
-    <!--    Table of Contents Sidebar -->
-    <!--    <aside -->
-    <!--      class="hidden lg:block w-48 sticky bg-gray-50 shadow-md rounded-md p-3" -->
-    <!--    > -->
-    <!--      <h2 class="font-semibold text-gray-800 text-base mb-3"> -->
-    <!--        Contents -->
-    <!--      </h2> -->
-    <!--      <TableOfContents :toc="page.body.toc" /> -->
-    <!--    </aside> -->
   </div>
 </template>
 
-<script lang="ts" setup>
-import { computed, onMounted } from 'vue'
+<script setup lang="ts">
+import { computed } from 'vue'
 import TagButton from '~/components/tags/TagButton.vue'
+import PostNavigation from '~/components/card/PostNavigation.vue'
 
 // Fetch blog data
 const author = useRuntimeConfig().public.author
 const route = useRoute()
+
 const { data: page } = await useAsyncData(route.path, () => {
   return queryCollection('contents')
     .path(route.path)
     .first()
 })
 
+useSeoMeta({
+  title: page.value?.title,
+  description: page.value?.description,
+})
 // Format the date
 const formattedDate = computed(() => {
   const date = new Date(page.value.date)
   return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
 })
 
-// TOC highlighting logic
-onMounted(() => {
-  const updateActiveToc = () => {
-    const tocItems = document.querySelectorAll('.toc-link')
-    tocItems.forEach((item) => {
-      const target = document.querySelector(item.getAttribute('href')!)
-      if (target) {
-        const rect = target.getBoundingClientRect()
-        if (rect.top >= 0 && rect.top < window.innerHeight / 2) {
-          item.classList.add('text-blue-500', 'font-bold')
-        }
-        else {
-          item.classList.remove('text-blue-500', 'font-bold')
-        }
-      }
-    })
-  }
+const { data: allPosts } = await useAsyncData('all-posts', () => {
+  return queryCollection('contents')
+    .select('title', 'path', 'date') // 필요한 필드만 가져오기
+    .order('date', 'DESC') // 날짜순 정렬
+    .all()
+})
 
-  window.addEventListener('scroll', updateActiveToc)
+// Compute previous and next posts
+const nextPost = computed(() => {
+  const currentIndex = allPosts.value.findIndex(post => post.path === route.path)
+  return currentIndex > 0 ? allPosts.value[currentIndex - 1] : null
+})
+
+const previousPost = computed(() => {
+  const currentIndex = allPosts.value.findIndex(post => post.path === route.path)
+  return currentIndex < allPosts.value.length - 1 ? allPosts.value[currentIndex + 1] : null
 })
 </script>

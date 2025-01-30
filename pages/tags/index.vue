@@ -4,7 +4,7 @@
     <div class="w-full max-w-2xl p-4">
       <!-- 태그 개수 표시 -->
       <p class="text-lg font-semibold text-gray-700 mb-4">
-        총 {{ filteredContents.length }}개의 태그가 있습니다. #{{ selectedTag }}
+        {{ tagCountText }}
       </p>
 
       <div class="flex flex-wrap gap-2">
@@ -13,13 +13,12 @@
           :key="tag"
           class="m-1"
         >
-          <UButton
-            class="bg-gray-200 text-black rounded-2xl"
-            :class="{ 'bg-gray-400': tag === selectedTag }"
-            @click="selectTag(tag)"
-          >
-            {{ tag }} ({{ count }})
-          </UButton>
+          <TagButton
+            :tag="tag"
+            :count="count"
+            :selected-tag="selectedTag"
+            @click="clickTag(tag)"
+          />
         </div>
       </div>
     </div>
@@ -52,16 +51,14 @@
 import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import PostCard from '~/components/card/PostCard.vue'
+import TagButton from '~/components/tags/TagButton.vue'
 
 const route = useRoute()
-const { q } = route.query
-
-console.log(q)
 
 const { data: contents } = await useAsyncData(route.path, () => {
   return queryCollection('contents')
-    .select('id', 'tags', 'title', 'date', 'description', 'path', 'body', 'excerpt')
-    .order('date', 'desc')
+    .select('id', 'tags', 'title', 'date', 'description', 'path', 'body')
+    .order('date', 'DESC')
     .all()
 })
 
@@ -80,8 +77,16 @@ const filteredContents = computed(() => {
   )
 })
 
+// 태그 개수 표시용 computed
+const tagCountText = computed(() => {
+  if (!selectedTag.value) {
+    return `There are a total of ${filteredContents.value.length} posts`
+  }
+  return `#${selectedTag.value} - There are a total of ${filteredContents.value.length} posts`
+})
+
 // 태그 선택 함수
-const selectTag = (tag) => {
+const clickTag = (tag) => {
   selectedTag.value = selectedTag.value === tag ? null : tag
   navigateTo(`/tags?q=${tag}`)
 }

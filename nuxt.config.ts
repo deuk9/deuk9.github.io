@@ -5,23 +5,31 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
     '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
     '@nuxt/content',
     '@nuxt/ui',
     '@nuxt/image',
     '@nuxtjs/mdc',
     '@nuxtjs/tailwindcss',
     '@nuxt/icon',
+    '@nuxt/fonts',
   ],
+
+  // ssr: false,
+
   devtools: { enabled: false },
+
   app: {
     head: {
       title: 'deuk9-blog',
     },
   },
+
   site: {
     url: 'https://deuk9.github.io/',
     name: 'deuk9 의 개발 블로그',
   },
+
   content: {
     build: {
       markdown: {
@@ -61,9 +69,10 @@ export default defineNuxtConfig({
     public: {
       author: 'deuk9',
       comment: '성장과 배움, 그리고 공유의 공간입니다.',
-      github: 'https://deuk9.github.io/',
+      github: 'https://github.com/deuk9',
     },
   },
+
   // ui: {
   //   primary: 'blue',
   //   gray: 'cool',
@@ -71,16 +80,29 @@ export default defineNuxtConfig({
   alias: {
     '@': resolve(__dirname, '/'),
   },
-  compatibilityDate: '2024-04-03',
+  compatibilityDate: '2025-01-30',
+
   nitro: {
     preset: 'github-pages',
   },
-  // ssr: false,
 
   eslint: {
     config: {
       stylistic: true, // <---
     },
   },
+
+  fonts: {
+    defaults: {
+      weights: [400, 700], // 공통 기본 두께
+      styles: ['normal', 'italic'], // 공통 스타일
+    },
+    families: [
+      { name: 'Noto Sans KR', provider: 'google' },
+      { name: 'Roboto', provider: 'google' },
+    ],
+    display: 'swap',
+  },
+
   target: 'static',
 })

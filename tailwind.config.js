@@ -1,9 +1,9 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: [],
+module.exports = {
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['-apple-system', 'Noto Sans KR', 'Roboto', 'sans-serif'],
+      },
+    },
   },
-  plugins: [],
 }
-

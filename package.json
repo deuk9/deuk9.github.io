@@ -12,17 +12,24 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@nuxt/content": "^3.0.0",
+    "@nuxt/content": "^3.0.1",
     "@nuxt/eslint": "^0.7.5",
+    "@nuxt/fonts": "^0.10.3",
     "@nuxt/icon": "^1.10.3",
     "@nuxt/image": "^1.8.1",
     "@nuxt/ui": "^2.18.7",
     "@nuxtjs/mdc": "^0.13.1",
+    "@nuxtjs/robots": "^5.2.2",
     "@nuxtjs/sitemap": "^7.2.2",
-    "@nuxtjs/tailwindcss": "^6.13.1",
-    "nuxt": "^3.15.2",
+    "minisearch": "^7.1.1",
+    "nuxt": "^3.15.4",
     "remark-oembed": "^1.2.2",
     "vue": "latest",
     "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@iconify-json/mdi": "^1.2.3",
+    "@iconify-json/octicon": "^1.2.2",
+    "@nuxtjs/tailwindcss": "^6.13.1"
   }
 }
