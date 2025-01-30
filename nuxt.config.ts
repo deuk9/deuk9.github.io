@@ -14,9 +14,6 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     '@nuxt/fonts',
   ],
-
-  // ssr: false,
-
   devtools: { enabled: false },
 
   app: {
@@ -116,6 +113,14 @@ export default defineNuxtConfig({
       { name: 'Roboto', provider: 'google' },
     ],
     display: 'swap',
+  },
+
+  // ssr: false,
+
+  icon: {
+    serverBundle: {
+      collections: ['uil', 'mdi'],
+    },
   },
 
   target: 'static',
