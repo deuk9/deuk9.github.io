@@ -83,7 +83,7 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-01-30',
 
   nitro: {
-    preset: 'github-pages',
+    preset: 'github_pages',
   },
 
   eslint: {
