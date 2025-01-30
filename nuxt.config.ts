@@ -108,7 +108,7 @@ export default defineNuxtConfig({
   // ssr: false,
 
   icon: {
-    serverBundle: 'remote',
+    serverBundle: 'local',
   },
 
   target: 'static',
