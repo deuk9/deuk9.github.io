@@ -1,0 +1,2 @@
+import{f as l,o as t,c as r,a as o,d as s,H as d,G as n}from"./UU1K1ejp.js";const u={class:"w-auto bg-gray-50 border-gray-200 border border-solid mt-2 mb-2"},m=l({__name:"ProsePre",props:{code:{default:""},class:{default:""},language:{default:null},filename:{default:null},highlights:{default:null},meta:{default:""}},setup(f){return(a,e)=>(t(),r("div",u,[o("pre",{class:n([a.$props.class,"text-wrap"])},[e[0]||(e[0]=s("      ")),d(a.$slots,"default"),e[1]||(e[1]=s(`
+    `))],2)]))}});export{m as default};
