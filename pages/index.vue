@@ -1,6 +1,6 @@
 <template>
-  <div class="border-amber-50 flex flex-col items-center">
-    <!-- Tag Box -->
+  <div class="flex flex-col items-center w-full">
+    <!-- Profile Section -->
     <div class="w-full max-w-2xl p-4 flex flex-row">
       <NuxtImg
         src="/profile/profile.jpeg"
@@ -29,9 +29,12 @@
       </div>
     </div>
 
-    <!-- Card Box -->
-    <div class="w-full max-w-2xl mt-4 mb-4">
-      <div class="flex flex-col gap-6">
+    <!-- Recent Posts -->
+    <div class="w-full max-w-2xl mt-8">
+      <h2 class="text-2xl font-semibold text-gray-800 border-b mt-2 pb-2 mb-4">
+        📌 Recent Posts
+      </h2>
+      <div class="grid gap-4">
         <PostCard
           v-for="post in contents"
           :key="post.id"
@@ -44,7 +47,6 @@
             content: post,
             needEvent: true,
           }"
-          class="w-full"
         />
       </div>
     </div>
@@ -65,7 +67,7 @@ const { data: contents } = await useAsyncData(route.path, () => {
   return queryCollection('contents')
     .select('id', 'tags', 'title', 'date', 'description', 'path', 'body')
     .order('date', 'DESC')
-    .limit(5)
+    .limit(3)
     .all()
 })
 </script>
