@@ -85,16 +85,6 @@ export default defineNuxtConfig({
 
   nitro: {
     preset: 'github_pages',
-    routeRules: {
-      '/**': {
-        headers: {
-          'Cross-Origin-Opener-Policy': 'same-origin',
-          'Cross-Origin-Embedder-Policy': 'require-corp',
-          'Cross-Origin-Resource-Policy': 'same-origin',
-          'Access-Control-Allow-Origin': '*',
-        },
-      },
-    },
   },
 
   eslint: {
