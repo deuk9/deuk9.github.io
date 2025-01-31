@@ -2,7 +2,6 @@
   <div class="container mx-auto flex flex-col lg:flex-row gap-6 px-4 py-8">
     <!-- Main Blog Content -->
     <main
-      v-if="page"
       class="flex-1"
     >
       <!-- Blog Header -->
