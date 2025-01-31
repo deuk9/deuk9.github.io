@@ -33,8 +33,7 @@
       <!-- Blog Content -->
       <article class="mb-7">
         <ContentRenderer
-          v-if="page.body"
-          :value="page.body"
+          :value="page"
         />
       </article>
       <!-- Previous and Next Buttons -->
