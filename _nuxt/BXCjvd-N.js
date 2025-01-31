@@ -1,1 +1,0 @@
-import{_ as s,o as t,c as o,H as c}from"./UU1K1ejp.js";const r={},a={class:"ml-4 mt-2 mb-2 text-base list-decimal"};function l(e,n){return t(),o("ol",a,[c(e.$slots,"default")])}const m=s(r,[["render",l]]);export{m as default};

@@ -1,0 +1,1 @@
+import{_ as o,o as r,c as s,R as t}from"./a83qh99j.js";const c={},n={class:"border-gray-200 bg-gray-200 rounded-md pl-1 pr-1 font-sans text-"};function a(e,d){return r(),s("code",n,[t(e.$slots,"default")])}const l=o(c,[["render",a]]);export{l as default};
