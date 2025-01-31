@@ -1,75 +1,17 @@
-# Nuxt 3 Minimal Starter
+## Nuxt 3 개인 블로그 
+- 개발 관련 공부한 내용 혹은 알게된 내용을 정리하는 블로그입니다.
+- 심플하게 markdown 을 포스팅하는것에 집중하였습니다. 
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## 주요 사용 기술
+- Nuxt 3
+- Nuxt Content3
+- Tailwind CSS
+- miniSearch
+- typescript
 
-## Setup
+## 사용 방법
+- content 하위 blog 폴더 하위에 markdown 파일을 생성하여 포스팅을 작성합니다.
+- 포스팅 작성시 frontmatter 를 작성하여 제목, 작성일, 태그를 작성합니다.
+- 이미지는 public 폴더에 업로드하여 사용합니다.
 
-Make sure to install the dependencies:
 
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

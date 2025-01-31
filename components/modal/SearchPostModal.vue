@@ -122,7 +122,7 @@ miniSearch.addAll(toValue(data.value))
 const result = computed(() => miniSearch.search(toValue(query)))
 
 // 전체 게시물 가져오기
-const { data: allPost } = await useAsyncData('allPosts', () => {
+const { data: allPost } = await useAsyncData('all', () => {
   return queryCollection('contents')
     .select('id', 'tags', 'title', 'date', 'description', 'path', 'body')
     .order('date', 'DESC')
@@ -147,7 +147,6 @@ const uniqueBaseUrls = computed(() => {
   return baseUrlMap
 })
 
-// `allPost` 중 `uniqueBaseUrls`에 포함된 값만 필터링하여 matchCount 추가
 const filteredPostsWithCount = computed(() => {
   return allPost.value
     ? allPost.value

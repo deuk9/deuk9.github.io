@@ -1,7 +1,7 @@
 <template>
-  <h2
+  <h5
     :id="props.id"
-    class="text-xl mb-5"
+    class="text-base"
   >
     <a
       v-if="props.id && generate"
@@ -10,7 +10,7 @@
       <slot />
     </a>
     <slot v-else />
-  </h2>
+  </h5>
 </template>
 
 <script setup lang="ts">

@@ -9,7 +9,6 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxt/ui',
     '@nuxt/image',
-    '@nuxtjs/mdc',
     '@nuxtjs/tailwindcss',
     '@nuxt/icon',
     '@nuxt/fonts',
@@ -28,10 +27,6 @@ export default defineNuxtConfig({
   },
 
   content: {
-    database: {
-      type: 'sqlite',
-      // binding: 'SQLITE_DB_LOCATION',
-    },
     build: {
       markdown: {
         // Object syntax can be used to override default options
@@ -103,6 +98,10 @@ export default defineNuxtConfig({
       { name: 'Roboto', provider: 'google' },
     ],
     display: 'swap',
+  },
+
+  gtag: {
+    id: 'G-RG0D48N5J0',
   },
 
   // ssr: false,
