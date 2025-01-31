@@ -12,13 +12,16 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxt/icon',
     '@nuxt/fonts',
-    'nuxt-gtag',
   ],
   devtools: { enabled: false },
 
   app: {
     head: {
       title: 'deuk9-blog',
+      script: [
+        { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-RG0D48N5J0' },
+        'window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag(\'js\', new Date()); gtag(\'config\', \'G-RG0D48N5J0\');',
+      ],
     },
   },
 
@@ -99,10 +102,6 @@ export default defineNuxtConfig({
       { name: 'Roboto', provider: 'google' },
     ],
     display: 'swap',
-  },
-
-  gtag: {
-    id: 'G-RG0D48N5J0',
   },
 
   // ssr: false,
