@@ -4,10 +4,10 @@
     <NuxtImg
       :src="refinedSrc"
       :alt="alt"
-      :width="width"
-      :height="height"
       :placeholder="img(`/${refinedSrc}`, { quality: 80, blur: 3 })"
-      class="w-full max-w-lg "
+      format="webp"
+      loading="lazy"
+      class="w-full  "
     />
     <!-- 캡션 -->
     <figcaption

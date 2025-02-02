@@ -28,7 +28,7 @@ withDefaults(defineProps<HighlightCode>(), {
 </script>
 
 <style>
-pre code .line{
+pre code .line {
   display: block;
 }
 </style>
