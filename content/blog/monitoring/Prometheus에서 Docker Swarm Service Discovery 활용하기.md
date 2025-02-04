@@ -58,7 +58,7 @@ scrape_configs:
     
     - `tasks`의 포트 설정을 별도로 지정할 수 없습니다.
     - 테스트 결과 내부 네트워크 IP + publish port 로 접근하려고 합니다.
-    - 내부 네트워크 IP (`10.x.x.x`)와`publish port`로 접근하는 방식이므로, Prometheus가 Swarm 네트워크 내부에서 실행되지 않으면 접근이 어려울 수 있습니다.
+    - 내부 네트워크 IP (`10.x.x.x`)와`publish port`로 접근하지만, 내부 네트워크에서는 target port로 접근해야 정상적으로 데이터를 수집할 수 있습니다.
     - `docker run -p 8080:8080`처럼`publish port`와 `inner port`를 동일하게 설정해야 정상적인 모니터링이 가능합니다.
         
 
