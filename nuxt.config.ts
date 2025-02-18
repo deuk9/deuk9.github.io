@@ -80,7 +80,12 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-01-30',
 
   nitro: {
+    static: true,
     preset: 'github_pages',
+    prerender: {
+      crawlLinks: true,
+      routes: ['/sitemap.xml', '/robots.txt'],
+    },
   },
 
   eslint: {
