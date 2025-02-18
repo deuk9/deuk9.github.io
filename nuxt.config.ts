@@ -23,7 +23,7 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: 'https://deuk9.github.io/',
+    url: 'https://deuk9.github.io',
     name: 'deuk9 의 개발 블로그',
   },
 
@@ -107,7 +107,6 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    autoLastmod: true,
   },
   // ssr: false,
 
