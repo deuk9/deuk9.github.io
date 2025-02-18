@@ -103,8 +103,11 @@ export default defineNuxtConfig({
 
   gtag: {
     id: 'G-RG0D48N5J0',
-    config: {
-    },
+    config: {},
+  },
+
+  sitemap: {
+    autoLastmod: true,
   },
   // ssr: false,
 
