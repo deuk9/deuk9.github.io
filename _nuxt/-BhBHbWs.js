@@ -1,0 +1,2 @@
+import{f as t,c as r,o as s,d as l,Q as o,R as n}from"./Dfo0_R2Z.js";const f=t({__name:"ProsePre",props:{code:{default:""},class:{default:""},language:{default:null},filename:{default:null},highlights:{default:null},meta:{default:""}},setup(d){return(a,e)=>(s(),r("pre",{class:n([a.$props.class,"text-wrap text-sm w-auto bg-gray-50 border-gray-200 border border-solid mt-2 mb-2"])},[e[0]||(e[0]=l("      ")),o(a.$slots,"default"),e[1]||(e[1]=l(`
+    `))],2))}});export{f as default};

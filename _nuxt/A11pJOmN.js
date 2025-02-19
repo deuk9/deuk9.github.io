@@ -1,0 +1,1 @@
+import{_ as o,c as r,o as s,Q as t}from"./Dfo0_R2Z.js";const c={},n={class:"border-gray-200 bg-gray-200 rounded-md pl-1 pr-1 font-sans text-"};function a(e,d){return s(),r("code",n,[t(e.$slots,"default")])}const l=o(c,[["render",a]]);export{l as default};

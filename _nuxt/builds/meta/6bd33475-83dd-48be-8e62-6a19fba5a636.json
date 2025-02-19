@@ -1,1 +1,0 @@
-{"id":"6bd33475-83dd-48be-8e62-6a19fba5a636","timestamp":1738313243968,"matcher":{"static":{"/api/content/contents/database.sql":{"prerender":true},"/api/content/sitemap/database.sql":{"prerender":true},"/api/content/robots/database.sql":{"prerender":true}},"wildcard":{},"dynamic":{}},"prerendered":["/","/tags","/search"]}

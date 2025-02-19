@@ -1,0 +1,1 @@
+import{_ as s,c as t,o,Q as c}from"./Dfo0_R2Z.js";const r={},a={class:"ml-6 mt-2 mb-2 text-base list-disc"};function l(e,n){return o(),t("ul",a,[c(e.$slots,"default")])}const d=s(r,[["render",l]]);export{d as default};
