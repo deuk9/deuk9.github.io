@@ -127,5 +127,5 @@ export default defineNuxtConfig({
   //   },
   // },
   // },
-  target: 'static',
+  // target: 'static',
 })

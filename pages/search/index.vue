@@ -49,6 +49,7 @@
               title: post.title,
               content: post,
               tags: post.tags,
+              path: post.path,
               description: post.description,
               needEvent: true }
             "
