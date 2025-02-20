@@ -79,13 +79,14 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2025-01-30',
 
+  // blog의 한 content만 넣으면 되는데 버그같음..일단쓰자
   nitro: {
-    // static: true,
+    static: true,
     preset: 'github_pages',
-    // prerender: {
-    //   crawlLinks: true,
-    //   routes: ['/sitemap.xml', '/robots.txt', '/', '/blog/**'],
-    // },
+    prerender: {
+      crawlLinks: true,
+      routes: ['/sitemap.xml', '/robots.txt', '/', '/blog/test/testcontainer'],
+    },
   },
 
   eslint: {
@@ -111,8 +112,7 @@ export default defineNuxtConfig({
     config: {},
   },
 
-  sitemap: {
-  },
+  sitemap: {},
   // ssr: false,
 
   // icon: {
@@ -127,5 +127,5 @@ export default defineNuxtConfig({
   //   },
   // },
   // },
-  // target: 'static',
+  target: 'static',
 })
