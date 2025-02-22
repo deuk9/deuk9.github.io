@@ -17,7 +17,7 @@ description: Prometheus HTTP Service Discovery를 활용해 정적 설정 없이
   scheme: http                                                          
   http_sd_configs:                                                       
    - url: http://localhost:8080/api/targets
-     refresh_interval: "15s"         
+     refresh_interval: "15s"
 ```
 
 위 설정에서 `scheme`을 `http`로 설정하고, `url`을 지정하면 Prometheus가 주기적으로 해당 URL을 호출하여 모니터링 대상을 갱신한다. `refresh_interval`을 통해 갱신 주기를 설정할 수 있다. 위 설정에서는 15초마다 `http://localhost:8080/api/targets`를 호출하여 최신 모니터링 타겟을 가져오도록 구성했다.

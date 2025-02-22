@@ -1,10 +1,10 @@
 <template>
   <pre
     :class="$props.class"
-    class="text-wrap text-sm w-auto bg-gray-50 border-gray-200  border border-solid mt-2 mb-2"
-  >
-      <slot />
-    </pre>
+    class="text-wrap text-sm w-auto bg-gray-50 border-gray-200  border border-solid mt-2 mb-2 py-4 break-all"
+  ><!--
+    --><slot /><!--
+  --></pre>
 </template>
 
 <script setup lang="ts">
