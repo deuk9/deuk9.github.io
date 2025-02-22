@@ -6,7 +6,7 @@ tags:
   - test
 description: Spring boot에서 controller, service, repository 레이어에 대한 테스트 작성하는 방법에 대하여 알아본다.
 sitemap:
-  lastmod: 2024-01-28
+  lastmod: 2025-01-28
 ---
 
 
