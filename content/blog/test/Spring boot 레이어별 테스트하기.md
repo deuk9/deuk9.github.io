@@ -6,11 +6,11 @@ tags:
   - test
 description: Spring boot에서 controller, service, repository 레이어에 대한 테스트 작성하는 방법에 대하여 알아본다.
 sitemap:
-  lastmod: 2025-01-28
+  lastmod: 2025-02-15
 ---
 
 
-# Spring Boot에서 각 레이어별 테스트 작성하기
+
 
 Spring Boot 애플리케이션을 개발할 때, 각 레이어(controller, service, repository)에 대한 단위 테스트와 통합 테스트를 작성하는 것은 매우 중요하다. 테스트 작성에 대한 정답은 없지만 앞으로 이런식으로 작성해보겠다는 취지로 고민하여 작성하였다.
 
