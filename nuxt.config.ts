@@ -21,10 +21,10 @@ export default defineNuxtConfig({
       title: 'deuk9-blog',
     },
   },
-
   site: {
     url: 'https://deuk9.github.io',
     name: 'deuk9 의 개발 블로그',
+    trailingSlash: true,
   },
 
   content: {
@@ -69,7 +69,6 @@ export default defineNuxtConfig({
       github: 'https://github.com/deuk9',
     },
   },
-
   // ui: {
   //   primary: 'blue',
   //   gray: 'cool',
@@ -85,7 +84,7 @@ export default defineNuxtConfig({
     preset: 'github_pages',
     prerender: {
       crawlLinks: true,
-      routes: ['/sitemap.xml', '/robots.txt', '/', '/blog/test/testcontainer'],
+      routes: ['/sitemap.xml', '/robots.txt', '/', '/blog/test/testcontainer/'],
     },
   },
 
