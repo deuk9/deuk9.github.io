@@ -22,7 +22,7 @@ export default defineNuxtConfig({
     },
   },
   site: {
-    url: 'https://deuk9.github.io',
+    url: 'https://deuk9.github.io/',
     name: 'deuk9 의 개발 블로그',
     trailingSlash: true,
   },
@@ -66,7 +66,8 @@ export default defineNuxtConfig({
     public: {
       author: 'deuk9',
       comment: '성장과 배움, 그리고 공유의 공간입니다.',
-      github: 'https://github.com/deuk9',
+      github: 'https://github.com/deuk9/',
+      trailingSlash: true,
     },
   },
   // ui: {
