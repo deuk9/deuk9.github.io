@@ -17,7 +17,7 @@
         </div>
         <!-- Blog Tags -->
         <div class="mt-7 border-b pb-7">
-          <div class="flex flex-wrap gap-2">
+          <div class="flex flex-wrap gap-2 mb-1">
             <TagButton
               v-for="tag in page.tags"
               :key="tag"
@@ -28,7 +28,7 @@
       </div>
 
       <!-- Blog Content -->
-      <article class="mb-7">
+      <article class="mt-3 mb-7">
         <ContentRenderer :value="page" />
       </article>
 
