@@ -60,7 +60,9 @@ services:
       "
 ```
 - MQTT 프로토콜을 사용하기 위해서는 `rabbitmq_mqtt` 플러그인을 활성화해야 한다.
-- MQTT 기본 포트는 `1883`번이며, 이를 통해 메시지를 수신한다.
+- MQTT 기본 포트는 `1883`번이며, 이를 통해 메시지를 송수신한다.
+- **해당 플러그인을 통해 MQTT <-> AMQP 간 통신이 가능하다.**
+- **각 프로토콜은 각자의 topic 규칙으로 송수신하면 RabbitMQ가 이를 변환하여 처리한다.**
 
 ---
 
@@ -104,6 +106,7 @@ class RabbitMqConfig {
             .bind(queue)
             .to(exchange)
             .with(ROUTING_KEY)
+            .noargs()
     }
 }
 ```
@@ -131,3 +134,8 @@ class MqttAmqpConsumer {
 **MQTT 클라이언트가 구독하고 있는 토픽과 일치하는 라우팅 키**로 메시지를 전달해야 한다.
 
 **라우팅 키는 MQTT 토픽과의 호환을 위해 `.(dot)` 형식으로 작성해야 한다.**
+
+---
+
+### 🧑‍💻샘플코드
+https://github.com/deuk9/mqtt-amqp-integration
