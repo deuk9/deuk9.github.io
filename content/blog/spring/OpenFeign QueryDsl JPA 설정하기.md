@@ -6,6 +6,8 @@ tags:
 date: 2025-04-20
 title: Openfeign QueryDsl JPA 설정하기
 description: Openfeign QueryDsl JPA 설정하는 방법에 대하여 알아본다.
+sitemap:
+  lastmod: 2025-04-20
 ---
 기존에 Querydsl 프로젝트가 **버전 업그레이드가 잘 되지 않고 있다는 점은 알고 있었지만**, 그동안은 큰 문제가 없어 그냥 사용해왔다.
 
