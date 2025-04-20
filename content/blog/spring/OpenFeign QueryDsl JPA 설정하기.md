@@ -16,13 +16,13 @@ description: Openfeign QueryDsl JPA 설정하는 방법에 대하여 알아본�
 
 
 
-⚙️ 환경 구성은 아래와 같다.
+## 1. 환경 구성은 아래와 같다.
  - java 21
  - gradle(kotlin)
  - spring boot 3.4
 
 
-## 1. Gradle(kotlin) 설정하는 방법
+## 2. Gradle(kotlin) 설정하는 방법
 
 ```kotlin
 val queryDslVersion = "6.11"
@@ -32,7 +32,7 @@ implementation("io.github.openfeign.querydsl:querydsl-jpa:$queryDslVersion")
 annotationProcessor("io.github.openfeign.querydsl:querydsl-apt:$queryDslVersion:jpa")  
 ```
 
-## 2. maven 설정 방법
+## 3. maven 설정 방법
 ```xml
 <dependency>  
   <groupId>io.github.openfeign.querydsl</groupId>  
