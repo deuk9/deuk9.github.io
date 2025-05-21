@@ -90,7 +90,7 @@ logging:
 
 ## 📄 로그 출력 예시
 
-```javascript
+```json
 {"time":"2025-05-21T23:54:07.368","level":"WARN","thread":"http-nio-8080-exec-1","message": "hi."}
 ```
 
