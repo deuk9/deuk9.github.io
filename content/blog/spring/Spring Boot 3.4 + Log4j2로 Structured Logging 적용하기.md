@@ -9,12 +9,9 @@ sitemap:
   lastmod: 2025-05-17
 ---
 
-
-Spring Boot 3.4에서는 `structured logging` 기능이 정식으로 도입되었다.  
-기존에는 JSON 로그를 출력하려면 Logback의 Logstash Encoder나 별도의 Layout 설정이 필요했다.  
-이제는 Spring Boot에서 제공하는 `StructuredLogFormatter` 인터페이스를 통해 구조화된 로그를 간단하게 출력할 수 있다.
-
-이 글에서는 Log4j2 환경을 기준으로, Spring Boot 3.4의 structured logging 기능을 커스터마이징하여 적용하는 방법을 정리한다.
+운영 환경에서 로그를 수집하고 분석하는 과정에서, **특정 키워드나 필드 값을 기준으로 로그를 필터링하거나 분류하고 싶을 때**가 자주 발생한다.
+예를 들어 `"level": "error"`  같은 값을 기준으로 로그를 검색하려면, 단순 텍스트 로그보다 구조화된 JSON 로그가 훨씬 유리하다.
+보다 안정적이고 일관된 로그 구조를 만들기 위해 JSON 로그 포맷을 본격적으로 검토하였고, 그 과정에서 **Spring Boot 3.4에서 새롭게 추가된 `structured logging` 기능**을 알게 되었다.
 
 ---
 
@@ -54,8 +51,6 @@ import org.springframework.boot.logging.structured.StructuredLogFormatter;
 
 public class MyStructuredLoggingFormatter implements StructuredLogFormatter<LogEvent> {
 
-    private final ObjectMapper objectMapper = new JsonMapper();
-
     private final JsonWriter<LogEvent> writer = JsonWriter.<LogEvent>of((members) -> {
         members.add("time", event -> {
             Instant javaInstant = Instant.ofEpochMilli(event.getInstant().getEpochMillisecond());
@@ -75,7 +70,7 @@ public class MyStructuredLoggingFormatter implements StructuredLogFormatter<LogE
 ```
 
 - logback 으로 적용은 [spring-boot-logback-샘플](https://spring.io/blog/2024/08/23/structured-logging-in-spring-boot-3-4) 을 참고한다. (제너릭 인터페이스가 다름)
-
+-
 ## ⚙️ 설정 방법
 
 ```yaml
@@ -100,3 +95,4 @@ logging:
 ## 📚 참고 자료
 
 - [Spring Boot Structured Logging 공식 문서](https://docs.spring.io/spring-boot/reference/features/logging.html#features.logging.structured)
+
