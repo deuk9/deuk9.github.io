@@ -1,7 +1,7 @@
 <template>
   <h4
     :id="props.id"
-    class="text-lg mb-2 mt-2"
+    class="text-lg mb-2 mt-2 dark:text-white"
   >
     <a
       v-if="props.id && generate"
