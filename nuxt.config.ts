@@ -46,17 +46,15 @@ export default defineNuxtConfig({
           // Theme used in all color schemes.
           // theme: 'material-theme-lighter',
           // theme: 'snazzy-light',
-          theme: 'github-light',
+          // theme: 'github-light',
           langs: ['json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml', 'java', 'kotlin', 'go'],
           // OR
-          // theme: {
-          //   // Default theme (same as single string)
-          //   default: 'github-light',
-          //   // Theme used if `html.dark`
-          //   dark: 'github-dark',
-          //   // Theme used if `html.sepia`…
-          //   sepia: 'monokai'
-          // }
+          theme: {
+            // Default theme (same as single string)
+            default: 'github-light',
+            // Theme used if `html.dark`
+            dark: 'github-dark',
+          },
         },
       },
     },

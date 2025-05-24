@@ -2,7 +2,7 @@
   <NuxtLink
     :href="props.href"
     :target="props.target"
-    class="underline italic  hover:text-blue-600"
+    class="underline italic hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300"
   >
     <slot />
   </NuxtLink>

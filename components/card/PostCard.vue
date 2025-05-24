@@ -1,17 +1,17 @@
 <template>
   <div
-    class="p-6 bg-white border-b border-gray-200  rounded-s hover:shadow-xl transition-shadow duration-200"
+    class="p-6 bg-white dark:bg-gray-800  border-b border-gray-200 dark:border-gray-700 rounded-s hover:shadow-xl transition-shadow duration-200"
   >
     <!-- 제목 -->
     <h1
-      class="text-2xl font-bold text-gray-800 cursor-pointer hover:text-blue-600"
+      class="text-2xl font-bold text-gray-800 dark:text-white cursor-pointer hover:text-blue-600"
       @click="goToPost"
     >
       <a>{{ post.title }}</a>
     </h1>
 
     <!-- 작성 날짜 -->
-    <p class="text-xs text-gray-400 mt-1">
+    <p class="text-xs text-gray-400 dark:text-gray-300 mt-1">
       {{ post.date }}
     </p>
 
@@ -20,7 +20,7 @@
       v-if="post.content"
       :value="post.content"
       :unwrap="true"
-      class="reset-content text-sm text-gray-600 mt-4 line-clamp-3"
+      class="reset-content text-sm text-gray-600 dark:text-gray-200 mt-4 line-clamp-3"
     />
 
     <!-- 태그 리스트 -->
