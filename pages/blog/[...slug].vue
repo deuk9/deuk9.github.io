@@ -66,10 +66,12 @@ const [pageResponse, allPostsResponse] = await Promise.all([
       .all(),
   ),
 ])
-
+console.log('route -> ' + route.path)
 const page = pageResponse.data
 const allPosts = allPostsResponse.data
 
+console.log(page)
+console.log(allPosts)
 // 3. SEO 메타 정보 설정 (page 데이터가 로드된 후)
 useSeoMeta({
   title: page.value?.title,
@@ -87,9 +89,16 @@ const formattedDate = computed(() => {
   })
 })
 
+function removeTrailingSlash(path: string): string {
+  return path.replace(/\/$/, '')
+}
+
+// 사용 예시
+const cleanPath = removeTrailingSlash(route.path)
+
 // 5. 현재 포스트의 인덱스를 한 번만 계산하여 네비게이션에 활용
 const currentIndex = computed(() =>
-  allPosts.value.findIndex(post => post.path === route.path),
+  allPosts.value.findIndex(post => post.path === cleanPath),
 )
 
 // 6. 이전, 다음 포스트 계산 (인덱스에 기반)
