@@ -12,10 +12,10 @@
 
       <!-- Profile Info -->
       <div class="ml-6">
-        <div class="text-2xl font-bold text-gray-800">
+        <div class="text-2xl font-bold text-gray-800 dark:text-white">
           @{{ author }}
         </div>
-        <p class="text-gray-600 text-lg mt-2">
+        <p class="text-gray-600 dark:text-gray-400 text-lg mt-2">
           {{ comment }}
         </p>
         <div v-if="github">
@@ -31,7 +31,7 @@
 
     <!-- Recent Posts -->
     <div class="w-full max-w-2xl mt-8">
-      <h2 class="text-2xl font-semibold text-gray-800 border-b mt-2 pb-2 mb-4">
+      <h2 class="text-2xl font-semibold text-gray-800 dark:text-white border-b mt-2 pb-2 mb-4">
         📌 Recent Posts
       </h2>
       <div class="grid gap-4">

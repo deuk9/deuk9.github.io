@@ -1,7 +1,7 @@
 <template>
   <h5
     :id="props.id"
-    class="text-base"
+    class="text-base dark:text-white"
   >
     <a
       v-if="props.id && generate"

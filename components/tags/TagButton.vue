@@ -3,8 +3,8 @@
     <button
       class="px-3 py-1 text-sm rounded-full transition-colors duration-200 cursor-pointer"
       :class="{
-        'bg-gray-400 text-white': isSelected, // 선택된 경우 스타일
-        'bg-gray-200 hover:bg-gray-400': !isSelected, // 기본 스타일
+        'bg-gray-400 text-white dark:bg-gray-600': isSelected, // 선택된 경우 스타일
+        'bg-gray-200 hover:bg-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white': !isSelected, // 기본 스타일
       }"
       @click="goToTag(tag)"
     >

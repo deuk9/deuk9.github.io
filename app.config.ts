@@ -3,8 +3,9 @@ export default defineAppConfig({
     button: {
 
     },
-    // primary: 'yellow', // 기본 색상
-    // gray: 'cool', // 회색 계열
+    primary: 'blue', // 기본 색상
+    gray: 'cool', // 회색 계열
+    strategy: 'class',
   },
 
 })

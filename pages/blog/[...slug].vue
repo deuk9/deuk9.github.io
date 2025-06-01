@@ -4,10 +4,10 @@
     <main class="flex-1">
       <!-- Blog Header -->
       <div class="mb-12">
-        <h1 class="text-4xl font-bold text-gray-800 mb-2">
+        <h1 class="text-4xl font-bold dark:text-white mb-2">
           {{ page.title }}
         </h1>
-        <div class="text-sm text-gray-500 mt-5">
+        <div class="text-sm text-gray-500 dark:text-gray-300 mt-5">
           <div>
             <time :datetime="page.date">{{ formattedDate }}</time>
           </div>

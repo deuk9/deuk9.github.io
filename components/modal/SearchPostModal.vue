@@ -5,14 +5,14 @@
       class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50"
       @click.self="closeModal"
     >
-      <div class="bg-white rounded-lg p-6 w-full max-w-lg shadow-lg">
+      <div class="bg-white dark:bg-gray-800 rounded-lg p-6 w-full max-w-lg shadow-lg dark:shadow-gray-900">
         <!-- 모달 헤더 -->
-        <div class="flex justify-between items-center border-b pb-2">
-          <h2 class="text-lg font-semibold">
+        <div class="flex justify-between items-center border-b dark:border-gray-700 pb-2">
+          <h2 class="text-lg font-semibold dark:text-white">
             Search
           </h2>
           <button
-            class="text-gray-500 hover:text-gray-800"
+            class="text-gray-500 hover:text-gray-800 dark:text-gray-400 dark:hover:text-white"
             @click="closeModal"
           >
             ✖
