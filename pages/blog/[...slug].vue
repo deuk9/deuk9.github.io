@@ -5,11 +5,11 @@
       <!-- Blog Header -->
       <div class="mb-12">
         <h1 class="text-4xl font-bold dark:text-white mb-2">
-          {{ page.title }}
+          {{ pageResponse.data.value.title }}
         </h1>
         <div class="text-sm text-gray-500 dark:text-gray-300 mt-5">
           <div>
-            <time :datetime="page.date">{{ formattedDate }}</time>
+            <time :datetime="pageResponse.data.value.date">{{ formattedDate }}</time>
           </div>
           <div>
             By {{ author }}
@@ -19,7 +19,7 @@
         <div class="mt-7 border-b pb-7">
           <div class="flex flex-wrap gap-2 mb-1">
             <TagButton
-              v-for="tag in page.tags"
+              v-for="tag in pageResponse.data.value.tags"
               :key="tag"
               :tag="tag"
             />
@@ -29,7 +29,7 @@
 
       <!-- Blog Content -->
       <article class="mt-3 mb-7">
-        <ContentRenderer :value="page" />
+        <ContentRenderer :value="pageResponse.data.value" />
       </article>
 
       <!-- Previous and Next Buttons -->
@@ -66,12 +66,9 @@ const [pageResponse, allPostsResponse] = await Promise.all([
       .all(),
   ),
 ])
-console.log('route -> ' + route.path)
 const page = pageResponse.data
 const allPosts = allPostsResponse.data
 
-console.log(page)
-console.log(allPosts)
 // 3. SEO 메타 정보 설정 (page 데이터가 로드된 후)
 useSeoMeta({
   title: page.value?.title,
