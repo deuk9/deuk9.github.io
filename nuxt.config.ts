@@ -83,7 +83,7 @@ export default defineNuxtConfig({
     preset: 'github_pages',
     prerender: {
       crawlLinks: true,
-      routes: ['/sitemap.xml', '/robots.txt', '/'],
+      routes: ['/sitemap.xml', '/robots.txt', '/', '/blog/test/testcontainer'],
     },
   },
 
