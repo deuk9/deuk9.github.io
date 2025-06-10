@@ -4,7 +4,7 @@
     <!-- 이전 게시물 카드 -->
     <NuxtLink
       v-if="previousPost"
-      :to="previousPost.path"
+      :to="previousPost.path.endsWith('/') ? previousPost.path : previousPost.path + '/'"
       class="block p-2 border rounded-md shadow-sm hover:shadow-md transition transform hover:-translate-y-0.5 bg-gray-50 dark:bg-gray-700 dark:border-gray-600 w-full"
     >
       <div class="text-xs text-gray-500 dark:text-gray-400">Previous Post</div>
@@ -16,7 +16,7 @@
     <!-- 다음 게시물 카드 -->
     <NuxtLink
       v-if="nextPost"
-      :to="nextPost.path"
+      :to="nextPost.path.endsWith('/') ? nextPost.path : nextPost.path + '/'"
       class="block p-2 border rounded-md shadow-sm hover:shadow-md transition transform hover:-translate-y-0.5 bg-gray-50 dark:bg-gray-700 dark:border-gray-600 text-right w-full"
     >
       <div class="text-xs text-gray-500 dark:text-gray-400">Next Post</div>

@@ -86,26 +86,28 @@ const formattedDate = computed(() => {
   })
 })
 
-function removeTrailingSlash(path: string): string {
-  return path.replace(/\/$/, '')
+function ensureTrailingSlash(path: string): string {
+  return path.endsWith('/') ? path : path + '/'
 }
 
 // 사용 예시
-const cleanPath = removeTrailingSlash(route.path)
+const cleanPath = ensureTrailingSlash(route.path)
 
 // 5. 현재 포스트의 인덱스를 한 번만 계산하여 네비게이션에 활용
 const currentIndex = computed(() =>
-  allPosts.value.findIndex(post => post.path === cleanPath),
+  allPosts.value.findIndex(post => ensureTrailingSlash(post.path) === cleanPath),
 )
 
 // 6. 이전, 다음 포스트 계산 (인덱스에 기반)
-const nextPost = computed(() => {
-  const index = currentIndex.value
-  return index > 0 ? allPosts.value[index - 1] : null
-})
-
+// 날짜 내림차순 정렬에서 이전(older) 포스트는 인덱스가 더 큰 포스트
 const previousPost = computed(() => {
   const index = currentIndex.value
   return index < allPosts.value.length - 1 ? allPosts.value[index + 1] : null
+})
+
+// 날짜 내림차순 정렬에서 다음(newer) 포스트는 인덱스가 더 작은 포스트
+const nextPost = computed(() => {
+  const index = currentIndex.value
+  return index > 0 ? allPosts.value[index - 1] : null
 })
 </script>

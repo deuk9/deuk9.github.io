@@ -48,7 +48,7 @@
               class="mt-2 border p-2 rounded-md"
             >
               <NuxtLink
-                :to="post.path"
+                :to="post.path.endsWith('/') ? post.path : post.path + '/'"
                 class="text-blue-500 font-medium"
                 @click="closeModal"
               >
@@ -93,7 +93,7 @@
 <script setup lang="ts">
 import MiniSearch from 'minisearch'
 
-const props = defineProps<{ isOpen: boolean }>()
+const _props = defineProps<{ isOpen: boolean }>()
 const emit = defineEmits(['close'])
 
 const closeModal = () => {

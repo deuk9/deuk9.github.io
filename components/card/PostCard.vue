@@ -55,7 +55,8 @@ const props = defineProps<{ post: PostCardInfo }>()
 
 // 클릭 시 이동 함수
 const goToPost = () => {
-  navigateTo(props.post.path)
+  const path = props.post.path.endsWith('/') ? props.post.path : props.post.path + '/'
+  navigateTo(path)
 }
 
 const emit = defineEmits(['tag-clicked'])
