@@ -1,4 +1,5 @@
 ---
+title: Spring 에서 kafka, REST API trace 모니터링하기(tempo + loki + grafana)
 tags:
   - tempo
   - opentelemetry
@@ -9,6 +10,7 @@ date: 2025-06-01
 description: Spring 에서 kafka, REST API trace 모니터링하기(tempo + loki + grafana)
 sitemap:
   lastmod: 2025-06-01
+
 ---
 
 최근 Spring I/O 발표에서 소개된 부분중 Kafka 데이터 흐름에 대한 trace정보를 저장하는 부분에 대하여 인상깊게 보았다.
