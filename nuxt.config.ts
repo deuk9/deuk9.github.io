@@ -14,6 +14,8 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     'nuxt-gtag',
   ],
+  // ssr: false,
+  ssr: true,
   devtools: { enabled: false },
 
   app: {
@@ -24,7 +26,7 @@ export default defineNuxtConfig({
   site: {
     url: 'https://deuk9.github.io/',
     name: 'deuk9 의 개발 블로그',
-    trailingSlash: true,
+    // trailingSlash: true,
   },
 
   content: {
@@ -83,7 +85,7 @@ export default defineNuxtConfig({
     preset: 'github_pages',
     prerender: {
       crawlLinks: true,
-      routes: ['/sitemap.xml', '/robots.txt', '/'],
+      routes: ['/sitemap.xml', '/robots.txt', '/blog/infra/rabbitmq-mqtt-amqp'],
     },
   },
 
@@ -111,7 +113,6 @@ export default defineNuxtConfig({
   },
 
   sitemap: {},
-  // ssr: false,
 
   // icon: {
   // clientBundle: {
@@ -125,5 +126,5 @@ export default defineNuxtConfig({
   //   },
   // },
   // },
-  target: 'static',
+  // target: 'static',
 })

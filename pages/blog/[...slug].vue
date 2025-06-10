@@ -5,11 +5,11 @@
       <!-- Blog Header -->
       <div class="mb-12">
         <h1 class="text-4xl font-bold dark:text-white mb-2">
-          {{ pageResponse.data.value.title }}
+          {{ pageResponse.data.value?.title }}
         </h1>
         <div class="text-sm text-gray-500 dark:text-gray-300 mt-5">
           <div>
-            <time :datetime="pageResponse.data.value.date">{{ formattedDate }}</time>
+            <time :datetime="pageResponse.data.value?.date">{{ formattedDate }}</time>
           </div>
           <div>
             By {{ author }}
@@ -19,7 +19,7 @@
         <div class="mt-7 border-b pb-7">
           <div class="flex flex-wrap gap-2 mb-1">
             <TagButton
-              v-for="tag in pageResponse.data.value.tags"
+              v-for="tag in pageResponse.data.value?.tags"
               :key="tag"
               :tag="tag"
             />
