@@ -1,6 +1,6 @@
 <!-- components/PostNavigation.vue -->
 <template>
-  <div class="grid grid-cols-2 gap-40 mt-6 ">
+  <div class="grid grid-cols-2 gap-4 sm:gap-10 md:gap-20 lg:gap-40 mt-6">
     <!-- 이전 게시물 카드 -->
     <NuxtLink
       v-if="previousPost"

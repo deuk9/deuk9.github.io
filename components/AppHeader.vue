@@ -1,11 +1,11 @@
 <template>
   <header class="flex justify-between items-center p-3 shadow-md bg-white dark:bg-gray-800 dark:text-white">
-    <div class="font-bold cursor-pointer ml-16 text-xl">
+    <div class="font-bold cursor-pointer ml-4 sm:ml-16 text-xl">
       <NuxtLink to="/">
         {{ author }}.blog
       </NuxtLink>
     </div>
-    <div class="flex space-x-4 pr-7">
+    <div class="flex space-x-4 pr-2 sm:pr-7">
       <button @click="toggleDarkMode" class="focus:outline-none" aria-label="Toggle dark mode">
         <UIcon
           :name="isDark ? 'mdi:white-balance-sunny' : 'mdi:moon-waning-crescent'"

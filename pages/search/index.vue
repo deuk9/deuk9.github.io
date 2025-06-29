@@ -21,7 +21,7 @@
       <p class="text-lg font-semibold text-gray-700 mb-4">
         <!--        {{ searchStatus }} -->
       </p>
-      <div class="flex flex-col gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <template v-if="query">
           <PostCard
             v-for="post in filteredPost"
