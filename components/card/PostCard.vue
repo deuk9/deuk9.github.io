@@ -1,6 +1,6 @@
 <template>
   <div
-    class="p-6 bg-white dark:bg-gray-800  border-b border-gray-200 dark:border-gray-700 rounded-s hover:shadow-xl transition-shadow duration-200"
+    class="p-6 bg-white dark:bg-gray-800  border-b border-gray-200 dark:border-gray-700 rounded hover:shadow-xl transition-shadow duration-200"
   >
     <!-- 제목 -->
     <h1

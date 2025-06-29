@@ -21,6 +21,9 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: 'deuk9-blog',
+      meta: [
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      ],
     },
   },
   site: {

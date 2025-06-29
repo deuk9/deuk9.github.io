@@ -25,7 +25,7 @@
 
     <!-- Card Box -->
     <div class="w-full max-w-2xl mt-4 mb-4">
-      <div class="flex flex-col gap-6 ">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <PostCard
           v-for="post in filteredContents"
           :key="post.id"
