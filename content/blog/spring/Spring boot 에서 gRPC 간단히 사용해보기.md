@@ -4,6 +4,9 @@ tags:
   - spring
 date: 2025-06-29
 title: Spring boot 에서 gRPC 간단히 사용해보기
+description: Spring boot 에서 gRPC 간단히 사용해본다. 
+sitemap:
+  lastmod: 2025-06-29
 ---
 최근 회사에서 **gRPC 사용 가능성**에 대한 이야기가 나왔다. 그래서 gRPC를 실제로 어떻게 사용할 수 있을지 간단하게 코드로 구성해보았다.
 
