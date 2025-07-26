@@ -142,5 +142,5 @@ fun main() {
 }
 ```
 ### 참고자료
-- [자바 개발자를 위한 코틀린 입문](https://www.inflearn.com/course/java-to-kotlin/dashboard)
+- [자바 개발자를 위한 코틀린 입문](https://www.inflearn.com/course/java-to-kotlin/dashboard).
 - ChatGPT

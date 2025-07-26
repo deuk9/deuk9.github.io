@@ -174,5 +174,5 @@ public class HelloService extends HelloServiceGrpc.HelloServiceImplBase {
 
 Spring Boot에서 gRPC를 사용해보는 것은 꽤 간단했다. 공식 Spring starter인 `spring-grpc` 덕분에 설정도 복잡하지 않았고, proto 정의 → 코드 생성 → 서버/클라이언트 구성 → 실행까지 한 번에 정리할 수 있었다.
 
-- [Spring gRPC](https://docs.spring.io/spring-grpc/reference/index.html)
-- [샘플코드](https://github.com/deuk9/spring-grpc)
+- [Spring gRPC](https://docs.spring.io/spring-grpc/reference/index.html).
+- [샘플코드](https://github.com/deuk9/spring-grpc).

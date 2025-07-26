@@ -62,5 +62,5 @@ annotationProcessor("io.github.openfeign.querydsl:querydsl-apt:$queryDslVersion:
 
 --- 
 참고 자료
-- [OpenFeign](https://github.com/OpenFeign/querydsl)
-- [Spring Data Extensions](https://docs.spring.io/spring-data/jpa/reference/repositories/core-extensions.html)
+- [OpenFeign](https://github.com/OpenFeign/querydsl).
+- [Spring Data Extensions](https://docs.spring.io/spring-data/jpa/reference/repositories/core-extensions.html).

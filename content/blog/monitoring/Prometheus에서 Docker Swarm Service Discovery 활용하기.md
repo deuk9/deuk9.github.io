@@ -66,4 +66,4 @@ scrape_configs:
 
 ### 참고자료
 
-- [Prometheus 공식 문서](https://prometheus.io/docs/prometheus/latest/configuration/configuration/)
+- [Prometheus 공식 문서](https://prometheus.io/docs/prometheus/latest/configuration/configuration/).
