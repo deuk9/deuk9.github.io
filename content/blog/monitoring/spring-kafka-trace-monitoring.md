@@ -184,7 +184,7 @@ public class MyConsumer {
 
 ---
 
-## 📚 참고 자료 && 샘플 코드
+## 📚 참고 자료 && 샘플 코드  
 - [샘플 코드](https://github.com/deuk9/spring-trace-observation)
 
 [//]: # (- https://www.youtube.com/watch?v=Z0Jcr5Q7FaI&t=2740s)

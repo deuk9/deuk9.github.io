@@ -1,11 +1,19 @@
 <template>
+  <slot />
   <NuxtLink
+    v-if="props.href"
     :href="props.href"
     :target="props.target"
     class="underline italic hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300"
   >
     <slot />
   </NuxtLink>
+  <span
+    v-else
+    class="text-gray-500"
+  >
+    <slot />
+  </span>
 </template>
 
 <script setup lang="ts">
