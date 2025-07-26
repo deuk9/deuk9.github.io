@@ -94,5 +94,5 @@ logging:
 
 ## 📚 참고 자료
 
-- [Spring Boot Structured Logging 공식 문서](https://docs.spring.io/spring-boot/reference/features/logging.html#features.logging.structured)
+- [Spring Boot Structured Logging 공식 문서](https://docs.spring.io/spring-boot/reference/features/logging.html#features.logging.structured).
 

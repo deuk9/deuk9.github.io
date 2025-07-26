@@ -138,4 +138,4 @@ class MqttAmqpConsumer {
 ---
 
 ### 🧑‍💻샘플코드
-https://github.com/deuk9/mqtt-amqp-integration
+https://github.com/deuk9/mqtt-amqp-integration.

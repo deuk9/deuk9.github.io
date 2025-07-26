@@ -51,4 +51,4 @@ HTTP Service Discovery는 Kubernetes와 같은 별도 서비스 디스커버리 
 
 --- 
 ### 참고자료
-- [프로메테우스 홈페이지](https://prometheus.io/docs/prometheus/latest/configuration/configuration/)
+- [프로메테우스 홈페이지](https://prometheus.io/docs/prometheus/latest/configuration/configuration/).

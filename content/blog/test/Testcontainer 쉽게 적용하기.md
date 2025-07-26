@@ -94,6 +94,5 @@ class CoffeeServiceTest extends IntegrationTestSupport {
 ---
 
 ## 참고자료
-- [Spring Boot Testcontainers 공식 문서](https://docs.spring.io/spring-boot/reference/testing/testcontainers.html)
-- [Testcontainers](https://www.testcontainers.org/)
-
+- [Spring Boot Testcontainers 공식 문서](https://docs.spring.io/spring-boot/reference/testing/testcontainers.html).
+- [Testcontainers](https://www.testcontainers.org/).
