@@ -6,18 +6,22 @@
       </NuxtLink>
     </div>
     <div class="flex space-x-4 pr-2 sm:pr-7">
-      <button @click="toggleDarkMode" class="focus:outline-none" aria-label="Toggle dark mode">
+      <button
+        class="focus:outline-none"
+        aria-label="Toggle dark mode"
+        @click="toggleDarkMode"
+      >
         <UIcon
           :name="isDark ? 'mdi:white-balance-sunny' : 'mdi:moon-waning-crescent'"
           class="w-5 h-5"
         />
       </button>
-      <NuxtLink to="/search">
-        <UIcon
-          name="mdi:magnify"
-          class="w-5 h-5"
-        />
-      </NuxtLink>
+      <!--      <NuxtLink to="/search"> -->
+      <!--        <UIcon -->
+      <!--          name="mdi:magnify" -->
+      <!--          class="w-5 h-5" -->
+      <!--        /> -->
+      <!--      </NuxtLink> -->
       <NuxtLink to="/tags">
         <UIcon
           name="mdi:tag"
