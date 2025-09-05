@@ -29,7 +29,16 @@
 
       <!-- Blog Content -->
       <article class="mt-3 mb-7">
-        <ContentRenderer :value="pageResponse.data.value" />
+        <ContentRenderer
+          v-if="pageResponse.data.value"
+          :value="pageResponse.data.value"
+        />
+        <div
+          v-else
+          class="text-center text-gray-500 py-12"
+        >
+          <p>Content not found</p>
+        </div>
       </article>
 
       <!-- Previous and Next Buttons -->
@@ -68,6 +77,14 @@ const [pageResponse, allPostsResponse] = await Promise.all([
 ])
 const page = pageResponse.data
 const allPosts = allPostsResponse.data
+
+// 페이지가 없는 경우 404 처리
+if (import.meta.server && !page.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Page Not Found',
+  })
+}
 
 // 3. SEO 메타 정보 설정 (page 데이터가 로드된 후)
 useSeoMeta({

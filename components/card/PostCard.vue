@@ -3,11 +3,13 @@
     class="p-6 bg-white dark:bg-gray-800  border-b border-gray-200 dark:border-gray-700 rounded hover:shadow-xl transition-shadow duration-200"
   >
     <!-- 제목 -->
-    <h1
-      class="text-2xl font-bold text-gray-800 dark:text-white cursor-pointer hover:text-blue-600"
-      @click="goToPost"
-    >
-      <a>{{ post.title }}</a>
+    <h1 class="text-2xl font-bold text-gray-800 dark:text-white">
+      <NuxtLink
+        :to="getPostUrl(post.path)"
+        class="cursor-pointer hover:text-blue-600 transition-colors"
+      >
+        {{ post.title }}
+      </NuxtLink>
     </h1>
 
     <!-- 작성 날짜 -->
@@ -15,13 +17,30 @@
       {{ post.date }}
     </p>
 
-    <!-- 본문 내용 (3줄 제한) -->
-    <ContentRenderer
-      v-if="post.content"
-      :value="post.content"
-      :unwrap="true"
-      class="reset-content text-sm text-gray-600 dark:text-gray-200 mt-4 line-clamp-3"
-    />
+    <!-- 본문 내용 (3줄 제한) - 성능 최적화 적용 -->
+    <template v-if="post.showFullContent !== false">
+      <ContentRenderer
+        v-if="post.content && post.content.body"
+        :value="post.content"
+        :unwrap="true"
+        class="reset-content text-sm text-gray-600 dark:text-gray-200 mt-4 line-clamp-3"
+      />
+      <div
+        v-else-if="post.description"
+        class="text-sm text-gray-600 dark:text-gray-200 mt-4 line-clamp-3"
+      >
+        {{ post.description }}
+      </div>
+    </template>
+    <template v-else>
+      <!-- 검색 결과에서는 description만 표시 (성능 최적화) -->
+      <div
+        v-if="post.description"
+        class="text-sm text-gray-600 dark:text-gray-200 mt-4 mb-2 line-clamp-3"
+      >
+        {{ post.description }}
+      </div>
+    </template>
 
     <!-- 태그 리스트 -->
     <div class="flex flex-wrap gap-2 mt-4">
@@ -48,15 +67,27 @@ interface PostCardInfo {
   path: string
   content: object // 추가된 필드: 포스트의 본문 내용
   needEvent: boolean
+  showFullContent?: boolean // 전체 콘텐츠 렌더링 여부 (성능 최적화용)
 }
 
 // Props 정의
 const props = defineProps<{ post: PostCardInfo }>()
 
-// 클릭 시 이동 함수
-const goToPost = () => {
-  const path = props.post.path.endsWith('/') ? props.post.path : props.post.path + '/'
-  navigateTo(path)
+// URL 안전 처리 함수
+const getPostUrl = (path: string): string => {
+  if (!path) return '/'
+
+  try {
+    // 이미 완전한 URL인지 확인
+    if (path.endsWith('/')) {
+      return path
+    }
+    return path + '/'
+  }
+  catch (error) {
+    console.error('Error processing post URL:', error, path)
+    return '/'
+  }
 }
 
 const emit = defineEmits(['tag-clicked'])

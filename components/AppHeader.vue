@@ -16,12 +16,12 @@
           class="w-5 h-5"
         />
       </button>
-      <!--      <NuxtLink to="/search"> -->
-      <!--        <UIcon -->
-      <!--          name="mdi:magnify" -->
-      <!--          class="w-5 h-5" -->
-      <!--        /> -->
-      <!--      </NuxtLink> -->
+      <NuxtLink to="/search">
+        <UIcon
+          name="mdi:magnify"
+          class="w-5 h-5"
+        />
+      </NuxtLink>
       <NuxtLink to="/tags">
         <UIcon
           name="mdi:tag"

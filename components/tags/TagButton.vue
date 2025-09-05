@@ -1,15 +1,15 @@
 <template>
   <div>
-    <button
-      class="px-3 py-1 text-sm rounded-full transition-colors duration-200 cursor-pointer"
+    <NuxtLink
+      :to="`/tags?q=${tag}`"
+      class="inline-block px-3 py-1 text-sm rounded-full transition-colors duration-200 cursor-pointer"
       :class="{
         'bg-gray-400 text-white dark:bg-gray-600': isSelected, // 선택된 경우 스타일
         'bg-gray-200 hover:bg-gray-400 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white': !isSelected, // 기본 스타일
       }"
-      @click="goToTag(tag)"
     >
       {{ tagText }}
-    </button>
+    </NuxtLink>
   </div>
 </template>
 
@@ -31,9 +31,4 @@ const tagText = computed(() => {
 const isSelected = computed(() => {
   return props.tag === props.selectedTag
 })
-
-// 태그 이동 함수
-const goToTag = (tag: string) => {
-  navigateTo(`/tags?q=${tag}`)
-}
 </script>
