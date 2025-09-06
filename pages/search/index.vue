@@ -9,7 +9,7 @@
           placeholder="Search posts..."
           class="w-full px-4 py-2 text-gray-700 bg-white  border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition"
         >
-        <UIcon
+        <Icon
           name="mdi:magnify"
           class="absolute right-3 top-3 w-5 h-5 text-gray-400"
         />
@@ -68,7 +68,7 @@
             :class="[
               'px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 border-2',
               currentPage === pageNum
-                ? 'bg-blue-600 border-blue-600 text-white shadow-lg scale-105 font-semibold dark:bg-blue-500 dark:border-blue-500'
+                ? 'bg-blue-600 border-blue-600 text-gray-800 shadow-lg scale-105 font-semibold dark:bg-blue-500 dark:border-blue-500 dark:text-white'
                 : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 hover:border-gray-400 dark:hover:border-gray-500'
             ]"
             @click="currentPage = pageNum"

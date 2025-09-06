@@ -2,7 +2,7 @@
   <div>
     <div class="w-56 mt-64 mr-16 bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
       <h3 class="text-lg font-semibold mb-4 text-gray-800 dark:text-white">
-        📁 Categories
+        Categories
       </h3>
       <div class="space-y-2">
         <div
@@ -16,7 +16,7 @@
             @click="toggleCategory(category.name)"
           >
             <div class="flex items-center space-x-2">
-              <UIcon
+              <Icon
                 :name="expandedCategories.includes(category.name) ? 'mdi:chevron-down' : 'mdi:chevron-right'"
                 class="w-4 h-4"
               />

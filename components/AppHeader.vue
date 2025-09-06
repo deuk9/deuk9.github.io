@@ -11,19 +11,19 @@
         aria-label="Toggle dark mode"
         @click="toggleDarkMode"
       >
-        <UIcon
+        <Icon
           :name="isDark ? 'mdi:white-balance-sunny' : 'mdi:moon-waning-crescent'"
           class="w-5 h-5"
         />
       </button>
       <NuxtLink to="/search">
-        <UIcon
+        <Icon
           name="mdi:magnify"
           class="w-5 h-5"
         />
       </NuxtLink>
       <NuxtLink to="/tags">
-        <UIcon
+        <Icon
           name="mdi:tag"
           class="w-5 h-5"
         />

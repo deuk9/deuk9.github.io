@@ -46,7 +46,7 @@
                     class="flex justify-start mt-2"
                   >
                     <NuxtLink :to="github">
-                      <UIcon
+                      <Icon
                         name="octicon:mark-github-16"
                         class="w-5 h-5"
                       />
@@ -61,7 +61,7 @@
           <div class="w-full mt-8 p-4">
             <div class="w-full">
               <h2 class="text-2xl font-semibold text-gray-800 dark:text-white border-b mt-2 pb-2 mb-4">
-                📌 Recent Posts
+                Recent Posts
               </h2>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <PostCard
