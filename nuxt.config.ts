@@ -7,7 +7,6 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
     '@nuxtjs/robots',
     '@nuxt/content',
-    '@nuxt/ui',
     '@nuxt/image',
     '@nuxtjs/tailwindcss',
     '@nuxt/icon',
@@ -82,13 +81,13 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2025-01-30',
 
-  // blog의 한 content만 넣으면 되는데 버그같음..일단쓰자
   nitro: {
     static: true,
     preset: 'github_pages',
     prerender: {
       crawlLinks: true,
-      routes: ['/sitemap.xml', '/robots.txt', '/blog/infra/rabbitmq-mqtt-amqp/'],
+      routes: ['/sitemap.xml', '/robots.txt'],
+      // 에러가 발생하는 경로들은 일단 제외하고 크롤링으로만 처리
     },
   },
 

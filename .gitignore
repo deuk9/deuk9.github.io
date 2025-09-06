@@ -26,3 +26,5 @@ logs
 
 # ai
 CLAUDE.md
+.claude
+.playwright-mcp
